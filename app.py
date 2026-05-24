@@ -11,6 +11,7 @@ End-to-end demo of a regional-language NLP pipeline. Features:
 Author: Pooja Kadam · Course: MBA WE 5 — NLP · 2026
 """
 import os
+import io
 import re
 import json
 import unicodedata
@@ -38,6 +39,70 @@ st.set_page_config(
     page_icon='📱',
     layout='wide',
     initial_sidebar_state='expanded',
+)
+ 
+# ═══════════════════════════════════════════════════════════════════════
+# CUSTOM CSS — visible loader instead of default gray-out on rerun
+# ═══════════════════════════════════════════════════════════════════════
+st.markdown(
+    """
+    <style>
+    /* Animated progress bar at the top of the page during any rerun */
+    [data-testid="stStatusWidget"] {
+        position: fixed !important;
+        top: 0 !important; left: 0 !important; right: 0 !important;
+        width: 100vw !important; height: 3px !important;
+        background: transparent !important;
+        z-index: 999999 !important;
+        padding: 0 !important; margin: 0 !important;
+        overflow: hidden !important;
+    }
+    [data-testid="stStatusWidget"] > div {
+        display: block !important;
+        height: 3px !important;
+        width: 100% !important;
+        background: linear-gradient(90deg,
+            rgba(31, 58, 95, 0)   0%,
+            rgba(31, 58, 95, 0.9) 50%,
+            rgba(31, 58, 95, 0)   100%) !important;
+        background-size: 50% 100% !important;
+        animation: nlp-progress 1.1s linear infinite !important;
+        border-radius: 0 !important;
+        color: transparent !important;
+    }
+    [data-testid="stStatusWidget"] svg,
+    [data-testid="stStatusWidget"] button,
+    [data-testid="stStatusWidget"] span,
+    [data-testid="stStatusWidget"] p { display: none !important; }
+ 
+    @keyframes nlp-progress {
+        0%   { background-position: -100% 0; }
+        100% { background-position:  200% 0; }
+    }
+ 
+    /* Smoother fade on page reruns instead of harsh gray-out */
+    [data-testid="stAppViewContainer"] {
+        transition: opacity 180ms ease-out;
+    }
+ 
+    /* Nicer spinner styling — bigger, centered */
+    [data-testid="stSpinner"] > div {
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        padding: 24px; gap: 12px;
+    }
+    [data-testid="stSpinner"] > div > div {
+        border-color: #1F3A5F !important;
+        border-top-color: transparent !important;
+        width: 48px !important; height: 48px !important;
+        border-width: 4px !important;
+    }
+    [data-testid="stSpinner"] > div > div + div {
+        font-size: 1.1rem; color: #1F3A5F; font-weight: 500;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
  
 # ═══════════════════════════════════════════════════════════════════════
@@ -263,6 +328,90 @@ def chatbot_respond(query, models, k=3):
     return hits
  
 # ═══════════════════════════════════════════════════════════════════════
+# CACHED VISUALIZATIONS — pre-rendered so page-switching is instant
+# ═══════════════════════════════════════════════════════════════════════
+@st.cache_data
+def get_marathi_token_corpus():
+    """Every Marathi token across the corpus, stopwords removed."""
+    texts = load_dataset()['review_text'].astype(str).tolist()
+    return [t for text in texts for t in mr_tokens(text)]
+ 
+@st.cache_data
+def get_top_bigrams(n=20):
+    texts = load_dataset()['review_text'].astype(str).tolist()
+    bigrams = Counter()
+    for text in texts:
+        toks = mr_tokens(text)
+        for i in range(len(toks) - 1):
+            bigrams[(toks[i], toks[i + 1])] += 1
+    return bigrams.most_common(n)
+ 
+def _fig_to_png(fig, dpi=110):
+    buf = io.BytesIO()
+    fig.savefig(buf, format='png', dpi=dpi, bbox_inches='tight')
+    plt.close(fig)
+    return buf.getvalue()
+ 
+@st.cache_data(show_spinner='Generating wordcloud (one-time)...')
+def make_wordcloud_png():
+    from wordcloud import WordCloud
+    freq = Counter(get_marathi_token_corpus())
+    wc = WordCloud(
+        font_path=str(FONT_PATH) if FONT_PATH.exists() else None,
+        width=1400, height=600,
+        background_color='white', colormap='viridis',
+        prefer_horizontal=0.9, min_font_size=12,
+    ).generate_from_frequencies(freq)
+    fig, ax = plt.subplots(figsize=(14, 6))
+    ax.imshow(wc, interpolation='bilinear'); ax.axis('off')
+    return _fig_to_png(fig)
+ 
+@st.cache_data
+def make_bigrams_png():
+    top_bg = get_top_bigrams(20)
+    labels = [' '.join(ng) for ng, _ in top_bg]
+    counts = [c for _, c in top_bg]
+    fig, ax = plt.subplots(figsize=(10, 8))
+    ax.barh(range(len(labels)), counts, color='#55A868')
+    ax.set_yticks(range(len(labels)))
+    ax.set_yticklabels(labels, fontproperties=DEVFONT if DEVFONT else None, fontsize=12)
+    ax.invert_yaxis()
+    ax.set_xlabel('Occurrences')
+    ax.set_title('Top 20 Marathi bigrams')
+    return _fig_to_png(fig)
+ 
+@st.cache_data
+def make_sentiment_comparison_png(lex_acc, lex_f1, ml_acc, ml_f1, bert_acc, bert_f1):
+    labels = ['Lexicon', 'TF-IDF + LR', 'IndicBERT\n(estimated)']
+    accs = [lex_acc, ml_acc, bert_acc]
+    f1s  = [lex_f1,  ml_f1,  bert_f1]
+    x = np.arange(3); w = 0.36
+    fig, ax = plt.subplots(figsize=(9, 4.5))
+    ax.bar(x - w/2, accs, w, label='Accuracy', color='#4C72B0')
+    ax.bar(x + w/2, f1s,  w, label='Macro-F1', color='#DD8452')
+    ax.set_xticks(x); ax.set_xticklabels(labels); ax.set_ylim(0, 1.05)
+    ax.set_ylabel('Score'); ax.legend()
+    for i, v in enumerate(accs): ax.text(i - w/2, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')
+    for i, v in enumerate(f1s):  ax.text(i + w/2, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')
+    return _fig_to_png(fig)
+ 
+@st.cache_data
+def make_confusion_matrix_png(cm_tuple):
+    cm = np.array(cm_tuple)
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))
+    im = ax.imshow(cm, cmap='Blues')
+    ax.set_xticks(range(2)); ax.set_xticklabels(['negative', 'positive'])
+    ax.set_yticks(range(2)); ax.set_yticklabels(['negative', 'positive'])
+    ax.set_xlabel('Predicted'); ax.set_ylabel('True')
+    for i in range(2):
+        for j in range(2):
+            ax.text(j, i, str(cm[i, j]), ha='center', va='center',
+                    color='white' if cm[i, j] > cm.max() / 2 else 'black',
+                    fontsize=18, fontweight='bold')
+    plt.colorbar(im, ax=ax, fraction=0.046)
+    return _fig_to_png(fig)
+ 
+# ═══════════════════════════════════════════════════════════════════════
 # SIDEBAR NAVIGATION
 # ═══════════════════════════════════════════════════════════════════════
 with st.sidebar:
@@ -282,9 +431,11 @@ with st.sidebar:
     st.caption('**Course:** MBA WE 5 — NLP')
     st.caption('**Date:** May 2026')
  
-# Pre-load models on first page load
-models = train_models()
-df = models['df']
+# Pre-load models on first page load — the show_spinner arg on @st.cache_resource
+# already gives a visible spinner here, but we wrap with a friendlier message.
+with st.spinner('⚙️  Loading models and corpus...'):
+    models = train_models()
+    df = models['df']
  
 # ═══════════════════════════════════════════════════════════════════════
 # PAGE: HOME
@@ -490,75 +641,35 @@ elif page == '🤖 Marathi Chatbot':
 # ═══════════════════════════════════════════════════════════════════════
 elif page == '📊 Visualizations':
     st.title('📊 Visualizations')
-    st.caption('Charts produced from the 560-row Marathi reviews corpus.')
+    st.caption('Charts produced from the 560-row Marathi reviews corpus. Each chart is cached so switching tabs is instant.')
  
     tab1, tab2, tab3, tab4 = st.tabs(['Wordcloud', 'Top bigrams', 'Sentiment metrics', 'Dataset breakdown'])
  
-    df_local = df.copy()
-    df_local['mr_tokens'] = df_local['review_text'].apply(mr_tokens)
-    all_mr = [t for ts in df_local['mr_tokens'] for t in ts]
- 
     with tab1:
-        try:
-            from wordcloud import WordCloud
-            wc = WordCloud(
-                font_path=str(FONT_PATH) if FONT_PATH.exists() else None,
-                width=1400, height=600,
-                background_color='white', colormap='viridis',
-                prefer_horizontal=0.9, min_font_size=12,
-            ).generate_from_frequencies(Counter(all_mr))
-            fig, ax = plt.subplots(figsize=(14, 6))
-            ax.imshow(wc, interpolation='bilinear'); ax.axis('off')
-            st.pyplot(fig)
-        except Exception as e:
-            st.error(f'Could not render wordcloud: {e}')
+        with st.spinner('🎨  Rendering Devanagari wordcloud...'):
+            try:
+                st.image(make_wordcloud_png(), use_container_width=True)
+            except Exception as e:
+                st.error(f'Could not render wordcloud: {e}')
  
     with tab2:
-        def ngrams(toks, n):
-            return zip(*[islice(toks, i, None) for i in range(n)])
-        bigrams = Counter()
-        for ts in df_local['mr_tokens']:
-            bigrams.update(ngrams(ts, 2))
-        top_bg = bigrams.most_common(20)
-        labels_bg = [' '.join(ng) for ng, _ in top_bg]
-        counts_bg = [c for _, c in top_bg]
-        fig, ax = plt.subplots(figsize=(10, 8))
-        ax.barh(range(len(labels_bg)), counts_bg, color='#55A868')
-        ax.set_yticks(range(len(labels_bg)))
-        ax.set_yticklabels(labels_bg, fontproperties=DEVFONT if DEVFONT else None, fontsize=12)
-        ax.invert_yaxis(); ax.set_xlabel('Occurrences')
-        ax.set_title('Top 20 Marathi bigrams')
-        st.pyplot(fig)
+        with st.spinner('📊  Computing top bigrams...'):
+            st.image(make_bigrams_png(), use_container_width=True)
  
     with tab3:
-        st.markdown('#### Three-model sentiment comparison')
-        labels = ['Lexicon', 'TF-IDF + LR', 'IndicBERT\n(estimated)']
-        accs = [0.65, models['sentiment_acc'], 0.93]
-        f1s  = [0.54, models['sentiment_f1'], 0.92]
-        x = np.arange(3); w = 0.36
-        fig, ax = plt.subplots(figsize=(9, 4.5))
-        ax.bar(x - w/2, accs, w, label='Accuracy', color='#4C72B0')
-        ax.bar(x + w/2, f1s, w, label='Macro-F1', color='#DD8452')
-        ax.set_xticks(x); ax.set_xticklabels(labels); ax.set_ylim(0, 1.05)
-        ax.set_ylabel('Score'); ax.legend()
-        for i, v in enumerate(accs): ax.text(i - w/2, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')
-        for i, v in enumerate(f1s):  ax.text(i + w/2, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')
-        st.pyplot(fig)
- 
-        st.markdown('#### TF-IDF + LR confusion matrix (held-out test split)')
-        cm = models['cm']
-        fig, ax = plt.subplots(figsize=(5.5, 4.5))
-        im = ax.imshow(cm, cmap='Blues')
-        ax.set_xticks(range(2)); ax.set_xticklabels(['negative', 'positive'])
-        ax.set_yticks(range(2)); ax.set_yticklabels(['negative', 'positive'])
-        ax.set_xlabel('Predicted'); ax.set_ylabel('True')
-        for i in range(2):
-            for j in range(2):
-                ax.text(j, i, str(cm[i,j]), ha='center', va='center',
-                        color='white' if cm[i,j] > cm.max()/2 else 'black',
-                        fontsize=18, fontweight='bold')
-        plt.colorbar(im, ax=ax, fraction=0.046)
-        st.pyplot(fig)
+        with st.spinner('📈  Generating sentiment metrics charts...'):
+            st.markdown('#### Three-model sentiment comparison')
+            st.image(
+                make_sentiment_comparison_png(
+                    0.65, 0.54,
+                    models['sentiment_acc'], models['sentiment_f1'],
+                    0.93, 0.92,
+                ),
+                use_container_width=True,
+            )
+            st.markdown('#### TF-IDF + LR confusion matrix (held-out test split)')
+            cm_tuple = tuple(tuple(int(v) for v in row) for row in models['cm'])
+            st.image(make_confusion_matrix_png(cm_tuple), use_container_width=True)
  
     with tab4:
         c1, c2 = st.columns(2)
