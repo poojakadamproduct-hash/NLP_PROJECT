@@ -1,13 +1,13 @@
 """
 Marathi E-commerce Review NLP — Streamlit App
 ==============================================
-
+ 
 End-to-end demo of a regional-language NLP pipeline. Features:
   - Live sentiment + emotion + NER + POS analysis on any Marathi input
   - Retrieval-based Marathi chatbot
   - Dataset visualizations (wordcloud, top n-grams)
   - Project overview and methodology
-
+ 
 Author: Pooja Kadam · Course: MBA WE 5 — NLP · 2026
 """
 import os
@@ -17,7 +17,7 @@ import unicodedata
 from collections import Counter
 from itertools import islice
 from pathlib import Path
-
+ 
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -29,7 +29,7 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
 from sklearn.metrics.pairwise import cosine_similarity
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PAGE CONFIG
 # ═══════════════════════════════════════════════════════════════════════
@@ -39,14 +39,14 @@ st.set_page_config(
     layout='wide',
     initial_sidebar_state='expanded',
 )
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PATHS & FONT REGISTRATION
 # ═══════════════════════════════════════════════════════════════════════
 BASE  = Path(__file__).parent
 DATA  = BASE / 'data'
 FONTS = BASE / 'fonts'
-
+ 
 FONT_PATH = FONTS / 'NotoSansDevanagari-Regular.ttf'
 if FONT_PATH.exists():
     fm.fontManager.addfont(str(FONT_PATH))
@@ -54,19 +54,19 @@ if FONT_PATH.exists():
     plt.rcParams['font.family'] = DEVFONT.get_name()
 else:
     DEVFONT = None
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # CACHED DATA LOADERS
 # ═══════════════════════════════════════════════════════════════════════
 @st.cache_data
 def load_dataset():
     return pd.read_csv(DATA / 'marathi_reviews_expanded.csv')
-
+ 
 @st.cache_data
 def load_stopwords():
     with open(DATA / 'marathi_stopwords.txt', encoding='utf-8') as f:
         return {unicodedata.normalize('NFC', w.strip()) for w in f if w.strip()}
-
+ 
 @st.cache_data
 def load_dicts():
     with open(DATA / 'ner_dict.json', encoding='utf-8') as f:
@@ -76,7 +76,7 @@ def load_dicts():
     with open(DATA / 'emotion_lexicon.json', encoding='utf-8') as f:
         emo = json.load(f)
     return ner, pos, emo
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PREPROCESSING — exactly the pipeline from the notebooks
 # ═══════════════════════════════════════════════════════════════════════
@@ -93,35 +93,35 @@ SUFFIXES = sorted({
     'ांत','ात','ून','ील','ला','ले','ली','ल्या','चा','ची','चे',
     'च्या','ने','ना','त',
 }, key=len, reverse=True)
-
+ 
 STOP = load_stopwords()
 NER_DICT, POS_DICT, EMOTION = load_dicts()
-
+ 
 def normalize_unicode(t):
     return unicodedata.normalize('NFC', str(t))
-
+ 
 def remove_noise(t):
     t = URL_RE.sub(' ', t)
     t = EMAIL_RE.sub(' ', t)
     t = EMOJI_RE.sub(' ', t)
     return re.sub(r'\s+', ' ', t).strip()
-
+ 
 def light_stem(w):
     for s in SUFFIXES:
         if w.endswith(s) and len(w) - len(s) >= 2:
             return w[:-len(s)]
     return w
-
+ 
 def mr_tokens(text):
     t = normalize_unicode(text)
     return [w for w in DEVA.findall(t) if w not in STOP]
-
+ 
 def en_tokens(text):
     return [w.lower() for w in LATIN.findall(str(text))]
-
+ 
 def all_tokens(text):
     return mr_tokens(text) + en_tokens(text)
-
+ 
 def clean_text(text):
     text = normalize_unicode(text)
     text = remove_noise(text)
@@ -129,7 +129,7 @@ def clean_text(text):
     en = [w.lower() for w in LATIN.findall(text)]
     mr_stem = [light_stem(w) for w in mr]
     return ' '.join(mr_stem + en)
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # MODEL TRAINING (cached)
 # ═══════════════════════════════════════════════════════════════════════
@@ -139,52 +139,56 @@ def train_models():
     df['clean_text']     = df['review_text'].apply(clean_text)
     df['true_sentiment'] = df['rating'].apply(
         lambda r: 'positive' if r >= 4 else ('negative' if r <= 2 else 'neutral'))
-
+ 
     # 2-class subset for sentiment model
     df2 = df[df['true_sentiment'] != 'neutral'].copy().reset_index(drop=True)
-
+ 
     # TF-IDF + Logistic Regression.
     # NOTE: we use a stratified train/test split (not cross_val_predict) because
-    # Streamlit Cloud's Python 3.14 has a joblib-parallel compatibility issue that
-    # crashes cross_val_predict. The metrics are equivalent for our purposes.
+    # Streamlit Cloud's Python 3.14 + joblib parallel had a compatibility issue.
+    # We also convert pandas Series to plain Python lists / numpy arrays before
+    # passing them to sklearn, because Streamlit Cloud's pandas uses pyarrow-backed
+    # string columns by default which break sklearn's _safe_indexing.
     vec = TfidfVectorizer(ngram_range=(1, 2), min_df=2, max_features=5000)
-    X = vec.fit_transform(df2['clean_text'])
-    y = df2['true_sentiment'].values
-
+    X = vec.fit_transform(df2['clean_text'].astype(str).tolist())
+    y = np.asarray(df2['true_sentiment'].astype(str).tolist())
+ 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y)
     eval_model = LogisticRegression(max_iter=1000).fit(X_train, y_train)
     y_pred = eval_model.predict(X_test)
     sentiment_acc = accuracy_score(y_test, y_pred)
     sentiment_f1  = f1_score(y_test, y_pred, average='macro', zero_division=0)
-
+ 
     # Final sentiment model (trained on all data, used for live predictions)
     sentiment_model = LogisticRegression(max_iter=1000).fit(X, y)
-
+ 
     # Emotion classifier (multi-label, weak supervision via lexicon)
     def emo_labels(text):
         return {EMOTION[t]['emotion'] for t in all_tokens(text) if t in EMOTION}
-
+ 
     df['emotion_set'] = df['review_text'].apply(emo_labels)
     all_emotions = sorted({e for s in df['emotion_set'] for e in s})
-
+ 
     Y = np.zeros((len(df), len(all_emotions)), dtype=int)
     for i, s in enumerate(df['emotion_set']):
         for j, e in enumerate(all_emotions):
             if e in s:
                 Y[i, j] = 1
     keep = Y.sum(axis=1) > 0
-    X_emo_train = vec.transform(df['clean_text'])[keep]
+    clean_text_list = df['clean_text'].astype(str).tolist()
+    X_emo_full  = vec.transform(clean_text_list)
+    X_emo_train = X_emo_full[keep]
     Y_emo_train = Y[keep]
     emo_model = OneVsRestClassifier(LogisticRegression(max_iter=1000)).fit(X_emo_train, Y_emo_train)
-
+ 
     # Chatbot index
-    chat_vec = TfidfVectorizer(ngram_range=(1, 2), min_df=1).fit(df['clean_text'])
-    chat_X   = chat_vec.transform(df['clean_text'])
-
+    chat_vec = TfidfVectorizer(ngram_range=(1, 2), min_df=1).fit(clean_text_list)
+    chat_X   = chat_vec.transform(clean_text_list)
+ 
     # Confusion matrix on test-split predictions
     cm = confusion_matrix(y_test, y_pred, labels=['negative', 'positive'])
-
+ 
     return {
         'df': df,
         'df2': df2,
@@ -200,7 +204,7 @@ def train_models():
         'chat_vec': chat_vec,
         'chat_X': chat_X,
     }
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PREDICTION FUNCTIONS
 # ═══════════════════════════════════════════════════════════════════════
@@ -216,7 +220,7 @@ def lexicon_predict(text):
     sentiment = ('positive' if pos > neg else
                  'negative' if neg > pos else 'neutral')
     return sentiment, pos, neg, matched
-
+ 
 def ml_predict(text, models):
     vec = models['vec']
     sentiment_model = models['sentiment_model']
@@ -225,20 +229,20 @@ def ml_predict(text, models):
     proba = sentiment_model.predict_proba(X)[0]
     classes = list(sentiment_model.classes_)
     return pred, dict(zip(classes, proba))
-
+ 
 def emotion_predict(text, models):
     X = models['vec'].transform([clean_text(text)])
     y_pred = models['emo_model'].predict(X)[0]
     return [e for e, p in zip(models['all_emotions'], y_pred) if p == 1]
-
+ 
 def tag_entities(text):
     toks = all_tokens(text)
     return [(t, NER_DICT[t]) for t in toks if t in NER_DICT]
-
+ 
 def tag_pos(text):
     toks = mr_tokens(text)
     return [(t, POS_DICT.get(t, 'UNK')) for t in toks]
-
+ 
 def chatbot_respond(query, models, k=3):
     cleaned = clean_text(query)
     q_vec = models['chat_vec'].transform([cleaned])
@@ -257,7 +261,7 @@ def chatbot_respond(query, models, k=3):
             'sentiment':  sent,
         })
     return hits
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # SIDEBAR NAVIGATION
 # ═══════════════════════════════════════════════════════════════════════
@@ -277,11 +281,11 @@ with st.sidebar:
     st.caption('**Author:** Pooja Kadam')
     st.caption('**Course:** MBA WE 5 — NLP')
     st.caption('**Date:** May 2026')
-
+ 
 # Pre-load models on first page load
 models = train_models()
 df = models['df']
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PAGE: HOME
 # ═══════════════════════════════════════════════════════════════════════
@@ -289,14 +293,14 @@ if page == '🏠 Home':
     st.title('Marathi E-commerce Review NLP')
     st.markdown('### An end-to-end NLP pipeline for regional-language product reviews')
     st.divider()
-
+ 
     col1, col2, col3, col4 = st.columns(4)
     col1.metric('Dataset size', f'{len(df):,} reviews')
     col2.metric('Categories', df['product_category'].nunique())
     col3.metric('Sentiment accuracy', f'{models["sentiment_acc"]:.0%}',
                 help='TF-IDF + Logistic Regression (stratified train/test split)')
     col4.metric('Macro-F1', f'{models["sentiment_f1"]:.2f}')
-
+ 
     st.markdown('### What this app does')
     st.markdown(
         """
@@ -306,22 +310,22 @@ if page == '🏠 Home':
         - **About** → full methodology, dictionaries, and links to the underlying reports.
         """
     )
-
+ 
     st.markdown('### Sample reviews from the corpus')
     sample = df.sample(5, random_state=1)[
         ['product_category', 'product_name', 'review_text', 'rating', 'source']]
     st.dataframe(sample, use_container_width=True, hide_index=True)
-
+ 
     st.markdown('### Quick try it')
     st.info('Click **"✍️ Analyze a Review"** in the sidebar and paste a Marathi review to see the pipeline in action.')
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PAGE: ANALYZE A REVIEW
 # ═══════════════════════════════════════════════════════════════════════
 elif page == '✍️ Analyze a Review':
     st.title('✍️ Analyze a Marathi Review')
     st.caption('Type or paste a Marathi product review. Live sentiment + emotion + NER + POS analysis below.')
-
+ 
     examples = {
         '— pick a sample —': '',
         'Positive mobile review':   'हा फोन खूप मस्त आहे. बॅटरी लाइफ छान आहे आणि कॅमेरा पण चांगला आहे.',
@@ -331,11 +335,11 @@ elif page == '✍️ Analyze a Review':
         'Negative fashion review':  'कापड पातळ आणि stitching वाईट. परत केले.',
     }
     sel = st.selectbox('Or pick an example:', list(examples.keys()))
-
+ 
     default_text = examples[sel] if sel != '— pick a sample —' else ''
     text = st.text_area('Review text', value=default_text, height=120,
                         placeholder='हा फोन खूप मस्त आहे...')
-
+ 
     if st.button('🔍 Analyze', type='primary', use_container_width=True):
         if not text.strip():
             st.warning('Please enter some Marathi text first.')
@@ -343,12 +347,12 @@ elif page == '✍️ Analyze a Review':
             # === Sentiment (two models side by side) ===
             st.divider()
             st.subheader('Sentiment Analysis')
-
+ 
             lex_sent, pos_score, neg_score, matched = lexicon_predict(text)
             ml_sent, ml_proba = ml_predict(text, models)
-
+ 
             c1, c2 = st.columns(2)
-
+ 
             with c1:
                 st.markdown('**Lexicon baseline**')
                 color = {'positive': '🟢', 'negative': '🔴', 'neutral': '⚪'}[lex_sent]
@@ -361,7 +365,7 @@ elif page == '✍️ Analyze a Review':
                         st.caption(f'{emoji} `{w}` → {p} (intensity {i:.1f})')
                 else:
                     st.caption('No lexicon words matched.')
-
+ 
             with c2:
                 st.markdown('**TF-IDF + Logistic Regression**')
                 color = {'positive': '🟢', 'negative': '🔴'}[ml_sent]
@@ -371,7 +375,7 @@ elif page == '✍️ Analyze a Review':
                 st.markdown('**All class probabilities:**')
                 for cls, p in sorted(ml_proba.items(), key=lambda x: -x[1]):
                     st.progress(float(p), text=f'{cls}: {p:.0%}')
-
+ 
             # === Emotions ===
             st.divider()
             st.subheader('Emotion Detection (Plutchik)')
@@ -386,7 +390,7 @@ elif page == '✍️ Analyze a Review':
                     col.markdown(f'### {emoji_map.get(e, "•")} {e}')
             else:
                 st.caption('No emotions detected (no lexicon hits for emotion-bearing words).')
-
+ 
             # === NER ===
             st.divider()
             st.subheader('Named Entities')
@@ -396,7 +400,7 @@ elif page == '✍️ Analyze a Review':
                 st.dataframe(ent_df, use_container_width=True, hide_index=True)
             else:
                 st.caption('No named entities found in the dictionary.')
-
+ 
             # === POS ===
             st.divider()
             st.subheader('Part-of-Speech Tags')
@@ -406,7 +410,7 @@ elif page == '✍️ Analyze a Review':
                 st.dataframe(pos_df, use_container_width=True, hide_index=True, height=200)
             else:
                 st.caption('No Marathi tokens to tag.')
-
+ 
             # === Preprocessing breakdown ===
             st.divider()
             with st.expander('🔧 Preprocessing pipeline breakdown'):
@@ -422,17 +426,17 @@ elif page == '✍️ Analyze a Review':
                 st.code(', '.join(en_tokens(text)) or '(none)')
                 st.markdown('**Final cleaned text fed to the ML model:**')
                 st.code(clean_text(text))
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PAGE: CHATBOT
 # ═══════════════════════════════════════════════════════════════════════
 elif page == '🤖 Marathi Chatbot':
     st.title('🤖 Marathi Product Chatbot')
     st.caption('Ask product questions in Marathi or English. The bot retrieves the most similar review from the 560-row corpus.')
-
+ 
     if 'chat_history' not in st.session_state:
         st.session_state.chat_history = []
-
+ 
     suggestions = [
         'बॅटरी लाइफ चांगली आहे का?',
         'सर्वोत्तम पुस्तक कोणते?',
@@ -445,12 +449,12 @@ elif page == '🤖 Marathi Chatbot':
     for col, q in zip(cols, suggestions):
         if col.button(q, use_container_width=True, key=f'sug_{q}'):
             st.session_state.pending_query = q
-
+ 
     user_query = st.chat_input('Type your question in Marathi or English...')
     if 'pending_query' in st.session_state and st.session_state.pending_query:
         user_query = st.session_state.pending_query
         del st.session_state.pending_query
-
+ 
     if user_query:
         st.session_state.chat_history.append({'role': 'user', 'content': user_query})
         hits = chatbot_respond(user_query, models, k=3)
@@ -466,7 +470,7 @@ elif page == '🤖 Marathi Chatbot':
                 f'• **रिव्ह्यू:** _"{top["review"]}"_'
             )
         st.session_state.chat_history.append({'role': 'assistant', 'content': reply, 'hits': hits})
-
+ 
     for msg in st.session_state.chat_history:
         with st.chat_message(msg['role']):
             st.markdown(msg['content'])
@@ -476,24 +480,24 @@ elif page == '🤖 Marathi Chatbot':
                         st.markdown(
                             f'- **{h["product"]}** ({h["category"]}, {h["rating"]}/5, sim={h["similarity"]:.2f})  \n  _{h["review"]}_'
                         )
-
+ 
     if st.session_state.chat_history and st.button('🗑️ Clear chat'):
         st.session_state.chat_history = []
         st.rerun()
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PAGE: VISUALIZATIONS
 # ═══════════════════════════════════════════════════════════════════════
 elif page == '📊 Visualizations':
     st.title('📊 Visualizations')
     st.caption('Charts produced from the 560-row Marathi reviews corpus.')
-
+ 
     tab1, tab2, tab3, tab4 = st.tabs(['Wordcloud', 'Top bigrams', 'Sentiment metrics', 'Dataset breakdown'])
-
+ 
     df_local = df.copy()
     df_local['mr_tokens'] = df_local['review_text'].apply(mr_tokens)
     all_mr = [t for ts in df_local['mr_tokens'] for t in ts]
-
+ 
     with tab1:
         try:
             from wordcloud import WordCloud
@@ -508,7 +512,7 @@ elif page == '📊 Visualizations':
             st.pyplot(fig)
         except Exception as e:
             st.error(f'Could not render wordcloud: {e}')
-
+ 
     with tab2:
         def ngrams(toks, n):
             return zip(*[islice(toks, i, None) for i in range(n)])
@@ -525,7 +529,7 @@ elif page == '📊 Visualizations':
         ax.invert_yaxis(); ax.set_xlabel('Occurrences')
         ax.set_title('Top 20 Marathi bigrams')
         st.pyplot(fig)
-
+ 
     with tab3:
         st.markdown('#### Three-model sentiment comparison')
         labels = ['Lexicon', 'TF-IDF + LR', 'IndicBERT\n(estimated)']
@@ -540,7 +544,7 @@ elif page == '📊 Visualizations':
         for i, v in enumerate(accs): ax.text(i - w/2, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')
         for i, v in enumerate(f1s):  ax.text(i + w/2, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')
         st.pyplot(fig)
-
+ 
         st.markdown('#### TF-IDF + LR confusion matrix (held-out test split)')
         cm = models['cm']
         fig, ax = plt.subplots(figsize=(5.5, 4.5))
@@ -555,7 +559,7 @@ elif page == '📊 Visualizations':
                         fontsize=18, fontweight='bold')
         plt.colorbar(im, ax=ax, fraction=0.046)
         st.pyplot(fig)
-
+ 
     with tab4:
         c1, c2 = st.columns(2)
         with c1:
@@ -566,7 +570,7 @@ elif page == '📊 Visualizations':
             st.markdown('**Rating distribution**')
             rating_counts = df['rating'].value_counts().sort_index()
             st.bar_chart(rating_counts)
-
+ 
 # ═══════════════════════════════════════════════════════════════════════
 # PAGE: ABOUT
 # ═══════════════════════════════════════════════════════════════════════
@@ -576,7 +580,7 @@ elif page == 'ℹ️ About':
         """
         This app demonstrates an end-to-end Natural Language Processing pipeline for **Marathi e-commerce product reviews**.
         It answers all five questions of the MBA WE 5 NLP course assignment:
-
+ 
         1. **Dataset creation** — 560 Marathi product reviews across 5 categories
            (mobile, kitchen, fashion, books, electronics).
         2. **Preprocessing pipeline** — 7 stages designed for the Devanagari script
@@ -593,19 +597,19 @@ elif page == 'ℹ️ About':
            lexicon baseline, TF-IDF + Logistic Regression (best so far),
            IndicBERT fine-tune skeleton, multi-label emotion classifier,
            retrieval-based Marathi chatbot.
-
+ 
         ### Headline result
         **TF-IDF + Logistic Regression** reaches **93% accuracy** and **0.91 macro-F1**
         on the 560-row corpus (5-fold cross-validation).
-
+ 
         ### Architecture
         Streamlit · scikit-learn · pandas · matplotlib · wordcloud · indic-nlp-library.
-
+ 
         ### Author
         **Pooja Kadam** · MBA WE 5 — NLP · May 2026.
         """
     )
-
+ 
     st.divider()
     st.markdown('### Sample dictionary entries')
     c1, c2, c3 = st.columns(3)
