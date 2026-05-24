@@ -8,7 +8,7 @@ End-to-end demo of a regional-language NLP pipeline. Features:
   - Dataset visualizations (wordcloud, top n-grams)
   - Project overview and methodology
  
-Author: Pooja Kadam · Course: MBA WE 5 — NLP · 2026
+Author: Pooja Kadam · Course: MBA — NLP · 2026
 """
 import os
 import io
@@ -428,7 +428,7 @@ with st.sidebar:
     )
     st.divider()
     st.caption('**Author:** Pooja Kadam')
-    st.caption('**Course:** MBA WE 5 — NLP')
+    st.caption('**Course:** MBA — NLP')
     st.caption('**Date:** May 2026')
  
 # Pre-load models on first page load — the show_spinner arg on @st.cache_resource
@@ -690,7 +690,7 @@ elif page == 'ℹ️ About':
     st.markdown(
         """
         This app demonstrates an end-to-end Natural Language Processing pipeline for **Marathi e-commerce product reviews**.
-        It answers all five questions of the MBA WE 5 NLP course assignment:
+        It answers all five questions of the MBA NLP course assignment:
  
         1. **Dataset creation** — 560 Marathi product reviews across 5 categories
            (mobile, kitchen, fashion, books, electronics).
@@ -717,7 +717,7 @@ elif page == 'ℹ️ About':
         Streamlit · scikit-learn · pandas · matplotlib · wordcloud · indic-nlp-library.
  
         ### Author
-        **Pooja Kadam** · MBA WE 5 — NLP · May 2026.
+        **Pooja Kadam** · MBA — NLP · May 2026.
         """
     )
  
