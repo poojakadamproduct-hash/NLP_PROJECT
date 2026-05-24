@@ -26,7 +26,7 @@ import matplotlib.font_manager as fm
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.multiclass import OneVsRestClassifier
-from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -143,16 +143,22 @@ def train_models():
     # 2-class subset for sentiment model
     df2 = df[df['true_sentiment'] != 'neutral'].copy().reset_index(drop=True)
 
-    # TF-IDF + Logistic Regression
+    # TF-IDF + Logistic Regression.
+    # NOTE: we use a stratified train/test split (not cross_val_predict) because
+    # Streamlit Cloud's Python 3.14 has a joblib-parallel compatibility issue that
+    # crashes cross_val_predict. The metrics are equivalent for our purposes.
     vec = TfidfVectorizer(ngram_range=(1, 2), min_df=2, max_features=5000)
     X = vec.fit_transform(df2['clean_text'])
     y = df2['true_sentiment'].values
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-    y_pred = cross_val_predict(LogisticRegression(max_iter=1000), X, y, cv=cv)
-    sentiment_acc = accuracy_score(y, y_pred)
-    sentiment_f1  = f1_score(y, y_pred, average='macro', zero_division=0)
 
-    # Final sentiment model (trained on all data)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42, stratify=y)
+    eval_model = LogisticRegression(max_iter=1000).fit(X_train, y_train)
+    y_pred = eval_model.predict(X_test)
+    sentiment_acc = accuracy_score(y_test, y_pred)
+    sentiment_f1  = f1_score(y_test, y_pred, average='macro', zero_division=0)
+
+    # Final sentiment model (trained on all data, used for live predictions)
     sentiment_model = LogisticRegression(max_iter=1000).fit(X, y)
 
     # Emotion classifier (multi-label, weak supervision via lexicon)
@@ -176,8 +182,8 @@ def train_models():
     chat_vec = TfidfVectorizer(ngram_range=(1, 2), min_df=1).fit(df['clean_text'])
     chat_X   = chat_vec.transform(df['clean_text'])
 
-    # Confusion matrix on CV predictions
-    cm = confusion_matrix(y, y_pred, labels=['negative', 'positive'])
+    # Confusion matrix on test-split predictions
+    cm = confusion_matrix(y_test, y_pred, labels=['negative', 'positive'])
 
     return {
         'df': df,
@@ -187,7 +193,7 @@ def train_models():
         'sentiment_acc': float(sentiment_acc),
         'sentiment_f1':  float(sentiment_f1),
         'cv_predictions': y_pred,
-        'cv_true':        y,
+        'cv_true':        y_test,
         'cm': cm,
         'all_emotions': all_emotions,
         'emo_model': emo_model,
@@ -288,7 +294,7 @@ if page == '🏠 Home':
     col1.metric('Dataset size', f'{len(df):,} reviews')
     col2.metric('Categories', df['product_category'].nunique())
     col3.metric('Sentiment accuracy', f'{models["sentiment_acc"]:.0%}',
-                help='TF-IDF + Logistic Regression (5-fold CV)')
+                help='TF-IDF + Logistic Regression (stratified train/test split)')
     col4.metric('Macro-F1', f'{models["sentiment_f1"]:.2f}')
 
     st.markdown('### What this app does')
@@ -535,7 +541,7 @@ elif page == '📊 Visualizations':
         for i, v in enumerate(f1s):  ax.text(i + w/2, v + 0.02, f'{v:.2f}', ha='center', fontweight='bold')
         st.pyplot(fig)
 
-        st.markdown('#### TF-IDF + LR confusion matrix (5-fold CV)')
+        st.markdown('#### TF-IDF + LR confusion matrix (held-out test split)')
         cm = models['cm']
         fig, ax = plt.subplots(figsize=(5.5, 4.5))
         im = ax.imshow(cm, cmap='Blues')
