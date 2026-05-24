@@ -1,0 +1,561 @@
+review_id,product_category,product_name,review_text,rating,source
+R001,mobile,Samsung Galaxy M14,हा फोन खूप मस्त आहे. बॅटरी लाइफ छान आहे आणि कॅमेरा पण चांगला आहे.,5,amazon
+R002,mobile,Redmi Note 12,किंमतीच्या तुलनेत हा फोन ठीक आहे पण कॅमेरा अपेक्षेइतका चांगला नाही.,3,flipkart
+R003,mobile,iPhone 13,खूप महाग आहे पण performance अप्रतिम आहे. पैसे वसूल झाले.,5,amazon
+R004,mobile,Realme Narzo 60,फोन गरम होतो आणि बॅटरी लवकर संपते. वाईट अनुभव.,2,flipkart
+R005,mobile,Vivo Y27,डिस्प्ले छान आहे पण processor slow आहे.,3,amazon
+R006,mobile,OnePlus Nord CE 3,मस्त फोन आहे! चार्जिंग खूप fast आहे.,5,amazon
+R007,mobile,Poco X5 Pro,पैसे वाया गेले. फोन hang होतो वारंवार.,1,flipkart
+R008,mobile,Samsung Galaxy A34,चांगला फोन आहे. कॅमेरा क्वालिटी मस्त आहे.,4,amazon
+R009,mobile,Motorola Edge 40,delivery वेळेत झाली. फोन छान आहे.,4,flipkart
+R010,mobile,Nothing Phone 2,डिझाईन खूप वेगळी आहे. आवडली.,5,amazon
+R011,kitchen,Prestige Pressure Cooker,खूप उपयुक्त वस्तू आहे. quality पण छान आहे.,5,amazon
+R012,kitchen,Pigeon Mixer Grinder,मोटर खूप आवाज करते. वाईट उत्पादन.,2,flipkart
+R013,kitchen,Philips Air Fryer,आरोग्यदायी जेवण बनवण्यासाठी उत्तम. खूप आवडले.,5,amazon
+R014,kitchen,Hawkins Tawa,नॉन स्टिक coating लवकर निघाली. निराशा झाली.,2,flipkart
+R015,kitchen,Bajaj Induction Cooktop,किंमत वाजवी आणि performance छान.,4,amazon
+R016,kitchen,Milton Water Bottle,पाणी thanda राहते. मस्त product.,5,amazon
+R017,kitchen,Borosil Glass Set,नाजूक आहे पण दिसायला छान आहे.,4,flipkart
+R018,kitchen,Wonderchef Cookware,non-stick चांगले आहे. किंमत थोडी जास्त.,4,amazon
+R019,kitchen,Butterfly Wet Grinder,खूप जड आहे पण काम छान करते.,4,flipkart
+R020,kitchen,Cello Lunch Box,leak होतो. पैसे वाया.,1,amazon
+R021,fashion,Levi's Jeans,fitting perfect आहे. quality उत्तम.,5,amazon
+R022,fashion,Allen Solly Shirt,कापड चांगले पण रंग वेगळा आला.,3,flipkart
+R023,fashion,Bata Sandals,आरामदायी आहेत. रोज वापरतो.,5,amazon
+R024,fashion,Peter England Trouser,फिटिंग नीट नाही. परत करावे लागले.,2,flipkart
+R025,fashion,W for Woman Kurti,डिझाईन सुंदर आहे. आवडली खूप.,5,amazon
+R026,fashion,Lee Cooper Shoes,दर्जा सुमार आहे. महिन्यातच खराब झाले.,1,flipkart
+R027,fashion,Raymond Suit Length,कापड अप्रतिम. लग्नासाठी घेतले.,5,amazon
+R028,fashion,Fastrack Watch,दिसायला छान पण strap नाजूक.,3,flipkart
+R029,fashion,Wildcraft Backpack,मजबूत आहे. ट्रेकिंगसाठी मस्त.,5,amazon
+R030,fashion,Puma T-Shirt,कापड पातळ आहे. किंमतीला अनुसरून नाही.,2,flipkart
+R031,books,Shyamchi Aai,मराठी साहित्यातील अमूल्य पुस्तक. सर्वांनी वाचावे.,5,amazon
+R032,books,Mrityunjay,शिवाजी सावंत यांचे अप्रतिम लेखन. खूप आवडले.,5,flipkart
+R033,books,Ranangan,छपाई दर्जा सुमार. पाने फाटली.,2,amazon
+R034,books,Vyakti ani Valli,पु ल देशपांडे यांचे विनोदी लेखन. हसून हसून पोट दुखले.,5,flipkart
+R035,books,Battatyachi Chal,classic पुस्तक. प्रत्येकाने वाचावे.,5,amazon
+R036,books,Yayati,पुस्तक उशिरा मिळाले. content मात्र छान.,4,flipkart
+R037,books,Swami,ऐतिहासिक कादंबरी म्हणून उत्तम.,5,amazon
+R038,books,Kosla,भाषांतर नीट नाही. निराशा झाली.,2,flipkart
+R039,books,Pachola,कविता संग्रह छान आहे.,4,amazon
+R040,books,Duniyadari,पुस्तक चांगले पण किंमत जास्त वाटली.,3,flipkart
+R041,electronics,Boat Headphones,sound quality मस्त आहे. bass छान.,5,amazon
+R042,electronics,Mi Power Bank,चार्जिंग slow आहे पण किंमत कमी.,3,flipkart
+R043,electronics,Sony WH-1000XM4,noise cancellation अप्रतिम. खूप आवडले.,5,amazon
+R044,electronics,JBL Speaker,आवाज स्पष्ट आहे. battery पण छान.,5,flipkart
+R045,electronics,HP Laptop,किंमत वाजवी पण heating problem आहे.,3,amazon
+R046,electronics,Logitech Mouse,काम करताना आरामदायी. मस्त product.,5,flipkart
+R047,electronics,Canon Camera,फोटो quality अप्रतिम. व्यावसायिक वापरासाठी छान.,5,amazon
+R048,electronics,Dell Monitor,स्क्रीन छान आहे पण stand कमकुवत.,3,flipkart
+R049,electronics,Apple AirPods,sound खूप छान. comfort पण मस्त.,5,amazon
+R050,electronics,TP-Link Router,signal कमी येतो. वाईट अनुभव.,2,flipkart
+R051,mobile,Samsung Galaxy S23,flagship फोन आहे. कॅमेरा अप्रतिम.,5,amazon
+R052,mobile,Redmi 12,बजेट मध्ये उत्तम. मस्त फोन.,4,flipkart
+R053,kitchen,Prestige Gas Stove,मजबूत बांधणी आणि flame छान.,5,amazon
+R054,kitchen,Lifelong Hand Blender,खूप उपयुक्त. किंमत पण कमी.,5,flipkart
+R055,fashion,Adidas Shoes,आरामदायी आणि टिकाऊ.,5,amazon
+R056,fashion,H&M Dress,कापड पातळ आणि stitching वाईट.,2,flipkart
+R057,books,Aaicha Gao,बालपणीच्या आठवणी जागवल्या. खूप भावनिक.,5,amazon
+R058,books,Garambicha Bapu,अप्रतिम कादंबरी. वाचत राहावी अशी.,5,flipkart
+R059,electronics,boAt Smartwatch,features छान आहेत पण battery कमी.,3,amazon
+R060,electronics,Realme Buds,sound average पण किंमत मस्त.,4,flipkart
+S0527,electronics,Apple AirPods,खूप समाधानी. signal expected पेक्षा अमूल्य.,4,synthetic
+S0560,electronics,Realme Buds,Delivery वेळेत झाली. Realme Buds खूप मस्त आहे. डिस्प्ले अद्वितीय.,4,synthetic
+S0366,fashion,Lee Cooper Shoes,Delivery वेळेत झाली. Lee Cooper Shoes चांगले आहे. material मस्त.,4,synthetic
+S0541,electronics,Mi Power Bank,मला Mi Power Bank खूप आवडला. build superb आहे.,5,synthetic
+S0558,electronics,boAt Smartwatch,मस्त product. speed खरोखर amazing आहे.,5,synthetic
+S0244,mobile,Redmi Note 12,Mixed feelings. कॅमेरा छान पण कॅमेरा थोडे पातळ.,3,synthetic
+S0565,electronics,Apple Watch,Apple Watch फार solid. warranty आणि design दोन्ही अप्रतिम.,5,synthetic
+S0546,electronics,Mi Smart Band,Delivery वेळेत झाली. Mi Smart Band खूप मस्त आहे. battery सुंदर.,5,synthetic
+S0478,books,Wakaee,हा Wakaee खूप मजबूत आहे. printing quality सुंदर आहे.,5,synthetic
+S0189,mobile,Nothing Phone 2a,"Build quality मस्त, design चांगली, blown away.",5,synthetic
+S0340,kitchen,Cosmo Cookware,Expected पेक्षा कमी. पण use करण्यासारखे आहे.,3,synthetic
+S0361,fashion,Biba Salwar Suit,मला Biba Salwar Suit खूप आवडला. कापड मजबूत आहे.,5,synthetic
+S0512,books,Swami,पैसे वाया. छपाई पूर्णपणे खराब.,2,synthetic
+S0115,mobile,Oppo F23,Oppo F23 फार मजबूत. 5G connectivity आणि design दोन्ही चांगले.,5,synthetic
+S0511,books,Swami,हा Swami खूप कमकुवत आहे. cover कच्चा.,2,synthetic
+S0548,electronics,Apple AirPods,उत्तम product! range पण खूप मस्त. recommend करतो.,5,synthetic
+S0160,mobile,Samsung Galaxy A34,बॅटरी मजबूत आहे. किंमतीच्या तुलनेत चांगला.,5,synthetic
+S0221,mobile,Redmi A2,पैसे वाया. build quality पूर्णपणे worst.,2,synthetic
+S0499,books,Kosla,Customer care पण मदत करत नाही. छपाई भंगार.,1,synthetic
+S0390,fashion,W for Woman Kurti,खूप दिवस वापरतोय. sole अजूनही खूप मस्त आहे. blown away.,4,synthetic
+S0566,electronics,Realme Buds,Realme Buds फार चांगली. build आणि design दोन्ही solid.,4,synthetic
+S0525,electronics,Boat Speaker,Boat Speaker फार solid. warranty आणि design दोन्ही premium.,5,synthetic
+S0121,mobile,Motorola Edge 40,Motorola Edge 40 फार उत्तम. build quality आणि design दोन्ही premium.,5,synthetic
+S0466,books,Vyakti ani Valli,कथानक चांगला आहे. किंमतीच्या तुलनेत खूप मस्त.,5,synthetic
+S0263,kitchen,Borosil Microwave,पुन्हा घेईन. साफसफाई खरोखर चांगला आहे.,5,synthetic
+S0259,kitchen,Maharaja Toaster,सर्वांनी घ्या. build खरोखर चांगली आहे.,4,synthetic
+S0187,mobile,Vivo Y27,खूप आवडले. design खरोखर solid आहे.,5,synthetic
+S0154,mobile,Infinix Note 30,"Build quality मस्त, कॅमेरा आरामदायी, पुन्हा घेईन.",4,synthetic
+S0410,fashion,Fastrack Sunglasses,Delivery वेळेत झाली. Fastrack Sunglasses टिकाऊ आहे. फिनिश perfect.,4,synthetic
+S0396,fashion,Fastrack Sunglasses,हा Fastrack Sunglasses खूप छान आहे. design solid आहे.,4,synthetic
+S0159,mobile,Infinix Note 30,Delivery वेळेत झाली. Infinix Note 30 छान आहे. नेटवर्क अप्रतिम.,5,synthetic
+S0257,kitchen,Lifelong Sandwich Maker,Delivery वेळेत झाली. Lifelong Sandwich Maker चांगले आहे. मोटर अमूल्य.,4,synthetic
+S0357,fashion,Nike Shoes,मला Nike Shoes खूप आवडला. material अद्वितीय आहे.,5,synthetic
+S0351,fashion,W Dress,Delivery वेळेत झाली. W Dress amazing आहे. design छान.,5,synthetic
+S0225,mobile,Motorola G54,पैसे वाया. storage पूर्णपणे घाण.,1,synthetic
+S0453,books,Swami,खूप समाधानी. binding expected पेक्षा excellent.,5,synthetic
+S0186,mobile,Redmi Note 12,छान product! बॅटरी पण मस्त. value for money.,5,synthetic
+S0398,fashion,Manyavar Sherwani,अद्वितीय साईज! मस्त product. नक्की घ्या.,5,synthetic
+S0443,fashion,Levi's T-Shirt,कापड मजबूत आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0354,fashion,Wildcraft Jacket,खूप दिवस वापरतोय. sole अजूनही छान आहे. blown away.,5,synthetic
+S0214,mobile,Realme Narzo 60,"Money waste. कॅमेरा useless, build कच्चा.",2,synthetic
+S0413,fashion,Fastrack Watch,Fastrack Watch खरेदी करू नका. stitching कच्चा.,1,synthetic
+S0400,fashion,Raymond Shirt,मला Raymond Shirt खूप आवडला. stitching उपयुक्त आहे.,5,synthetic
+S0236,mobile,Vivo Y27,"काही गोष्टी अद्वितीय, काही फालतू. एकूणच ठीक.",3,synthetic
+S0376,fashion,W Dress,stitching चांगली आहे. किंमतीच्या तुलनेत अमूल्य.,5,synthetic
+S0439,fashion,W Dress,Okay-ish आहे. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0520,books,Pratinidhi,Expected पेक्षा कमी. पण use करण्यासारखे आहे.,3,synthetic
+S0372,fashion,Manyavar Sherwani,आरामदायी color! आनंद झाला. नक्की घ्या.,5,synthetic
+S0384,fashion,Peter England Shirt,Solid साईज! value for money. नक्की घ्या.,4,synthetic
+S0191,mobile,Motorola Edge 40,Perfect RAM! मस्त product. नक्की घ्या.,5,synthetic
+S0504,books,Yayati,Worst quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0285,kitchen,Hawkins Tawa,Hawkins Tawa फार premium. मोटर आणि design दोन्ही टिकाऊ.,4,synthetic
+S0238,mobile,Redmi 12,Redmi 12 किंमतीला अनुसरून ठीक. charging ठीक आहे पण special काही नाही.,3,synthetic
+S0436,fashion,Puma Shoes,Complaint केली. strap flimsy आहे.,1,synthetic
+S0518,books,Swami,कागद मस्त आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0156,mobile,iPhone 14,Premium product! नेटवर्क पण उत्तम. recommend करते.,4,synthetic
+S0149,mobile,Redmi A2,Redmi A2 फार superb. 5G connectivity आणि design दोन्ही छान.,4,synthetic
+S0377,fashion,FabIndia Kurta,हा FabIndia Kurta खूप अप्रतिम आहे. साईज मस्त आहे.,5,synthetic
+S0362,fashion,W Dress,Premium product! strap पण टिकाऊ. recommend करते.,5,synthetic
+S0585,electronics,Canon Camera,पातळ quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0311,kitchen,Philips Mixer,चांगला product! मोटर पण उपयुक्त. सर्वांनी घ्या.,4,synthetic
+S0176,mobile,Samsung Galaxy M14,खूप समाधानी. RAM expected पेक्षा perfect.,5,synthetic
+S0128,mobile,iQOO Neo 7,"Build quality perfect, कॅमेरा चांगला, recommend करते.",5,synthetic
+S0235,mobile,Samsung Galaxy F14,RAM उपयुक्त आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0317,kitchen,Borosil Microwave,Worst quality! किंमतीला अनुसरून नाही.,1,synthetic
+S0434,fashion,Fastrack Sunglasses,Fastrack Sunglasses खरेदी करू नका. design flimsy.,2,synthetic
+S0539,electronics,Realme Buds,खूप समाधानी. डिस्प्ले expected पेक्षा मजबूत.,5,synthetic
+S0133,mobile,Samsung Galaxy S23,हा Samsung Galaxy S23 खूप solid आहे. build quality छान आहे.,4,synthetic
+S0378,fashion,Raymond Shirt,टिकाऊ product! फिटिंग पण excellent. मस्त product.,4,synthetic
+S0392,fashion,Bata Sandals,फिटिंग आरामदायी आहे. किंमतीच्या तुलनेत perfect.,5,synthetic
+S0294,kitchen,Bajaj Induction Cooktop,टिकाऊ blade! पुन्हा घेईन. नक्की घ्या.,5,synthetic
+S0155,mobile,Motorola G54,"Build quality superb, charging solid, सर्वांनी घ्या.",4,synthetic
+S0190,mobile,Vivo Y27,Perfect बॅटरी! recommend करतो. नक्की घ्या.,5,synthetic
+S0239,mobile,Redmi Note 13 Pro,RAM अप्रतिम आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0414,fashion,W Dress,वाईट अनुभव. design पातळ आहे.,2,synthetic
+S0510,books,Vinda,Vinda खरेदी करू नका. कथा भंगार.,2,synthetic
+S0487,books,Wakaee,Premium product! भाषा पण चांगले. अप्रतिम अनुभव.,5,synthetic
+S0587,electronics,Dell Monitor,महिन्यातच warranty खराब झाली. पैसे वाया गेले.,2,synthetic
+S0112,mobile,OnePlus Nord CE 3,OnePlus Nord CE 3 फार मस्त. build quality आणि design दोन्ही चांगली.,5,synthetic
+S0231,mobile,iPhone 14,iPhone 14 mixed feelings. storage ठीक आहे पण special काही नाही.,3,synthetic
+S0110,mobile,iPhone 13,खूप दिवस वापरतोय. storage अजूनही solid आहे. recommend करते.,5,synthetic
+S0273,kitchen,Cosmo Cookware,टिकाऊ हाताळणी! समाधानी आहे. नक्की घ्या.,5,synthetic
+S0492,books,Pratinidhi,Pratinidhi फार सुंदर. कथा आणि design दोन्ही उपयुक्त.,5,synthetic
+S0212,mobile,Motorola G54,थकलेला quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0309,kitchen,Pigeon Mixer Grinder,हा Pigeon Mixer Grinder खूप अमूल्य आहे. हाताळणी चांगली आहे.,5,synthetic
+S0532,electronics,Fire-Boltt Watch,अप्रतिम sound quality! worth every rupee. नक्की घ्या.,5,synthetic
+S0105,mobile,Redmi Note 12,मला Redmi Note 12 खूप आवडला. processor मजबूत आहे.,5,synthetic
+S0243,mobile,OnePlus Nord CE 3,काही चांगले काही वाईट. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0320,kitchen,Hawkins Cooker,"Money waste. डिझाईन घाण, build poor.",2,synthetic
+S0118,mobile,Redmi Note 12,Great product! RAM पण अप्रतिम. blown away.,4,synthetic
+S0304,kitchen,Bajaj Induction Cooktop,टिकाऊ मोटर! खूप आवडले. नक्की घ्या.,5,synthetic
+S0229,mobile,iPhone 13,सुमार quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0153,mobile,Samsung Galaxy F14,मला Samsung Galaxy F14 खूप आवडला. कॅमेरा perfect आहे.,4,synthetic
+S0249,mobile,Redmi A2,Mixed feelings. grip amazing पण grip थोडे वाईट.,3,synthetic
+S0293,kitchen,Pigeon Mixer Grinder,"Build quality premium, build premium, worth every rupee.",5,synthetic
+S0277,kitchen,Prestige Gas Stove,उष्णता छान आहे. किंमतीच्या तुलनेत सुंदर.,5,synthetic
+S0364,fashion,Adidas T-Shirt,Recommend करतो. sole खरोखर premium आहे.,5,synthetic
+S0468,books,Aaicha Gao,अप्रतिम! printing quality solid आहे आणि किंमत वाजवी.,4,synthetic
+S0561,electronics,OnePlus Bullets,Delivery वेळेत झाली. OnePlus Bullets उपयुक्त आहे. battery premium.,4,synthetic
+S0536,electronics,Realme Buds,मला Realme Buds खूप आवडला. connectivity perfect आहे.,4,synthetic
+S0472,books,Duniyadari,cover solid आहे. किंमतीच्या तुलनेत perfect.,5,synthetic
+S0433,fashion,Nike Cap,"Money waste. comfort कमकुवत, build पातळ.",2,synthetic
+S0451,books,Battatyachi Chal,मस्त product! कथानक पण छान. आनंद झाला.,5,synthetic
+S0213,mobile,Poco X5 Pro,खराब quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0321,kitchen,Prestige Tawa,पैसे वाया. blade पूर्णपणे भंगार.,1,synthetic
+S0547,electronics,Mi Smart Band,"Build quality अप्रतिम, bass चांगली, worth every rupee.",5,synthetic
+S0408,fashion,Lee Cooper Jeans,Recommend करते. material खरोखर अप्रतिम आहे.,5,synthetic
+S0404,fashion,Allen Solly Shirt,खूप समाधानी. strap expected पेक्षा solid.,5,synthetic
+S0324,kitchen,Prestige Mixer Grinder,महिन्यातच warranty खराब झाली. complete waste.,2,synthetic
+S0248,mobile,Nothing Phone 2,ठीक आहे. sound superb पण build घाण.,3,synthetic
+S0599,electronics,HP Printer,Expected पेक्षा कमी. पण use करण्यासारखे आहे.,3,synthetic
+S0269,kitchen,Pigeon Mixer Grinder,मला Pigeon Mixer Grinder खूप आवडला. flame छान आहे.,5,synthetic
+S0447,fashion,FabIndia Kurta,फिटिंग आरामदायी आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0271,kitchen,Lifelong Hand Blender,Delivery वेळेत झाली. Lifelong Hand Blender उपयुक्त आहे. non-stick coating solid.,4,synthetic
+S0252,kitchen,Bajaj Induction Cooktop,safety lock मजबूत आहे. किंमतीच्या तुलनेत मजबूत.,4,synthetic
+S0131,mobile,Realme Narzo 60,Excellent product! storage पण अद्वितीय. recommend करतो.,4,synthetic
+S0201,mobile,Vivo V29,खूप निराशा झाली. बॅटरी bad आहे.,2,synthetic
+S0197,mobile,Redmi 12,खूप निराशा झाली. कॅमेरा worst आहे.,2,synthetic
+S0444,fashion,Bata Sandals,Mixed feelings. quality excellent पण quality थोडे नाजूक.,3,synthetic
+S0465,books,Aagatya,छान छपाई! worth every rupee. नक्की घ्या.,5,synthetic
+S0579,electronics,HP Laptop,भंगार signal! complaint केली. परत केले.,1,synthetic
+S0125,mobile,Realme Narzo 60,हा Realme Narzo 60 खूप चांगली आहे. फिंगरप्रिंट perfect आहे.,5,synthetic
+S0199,mobile,Tecno Spark 10 Pro,Description प्रमाणे नाही. नेटवर्क bad. पैसे वाया गेले.,2,synthetic
+S0347,kitchen,Prestige Mixer Grinder,Mixed feelings. non-stick coating अमूल्य पण non-stick coating थोडे कमकुवत.,3,synthetic
+S0551,electronics,Canon Camera,bass चांगला आहे. किंमतीच्या तुलनेत अमूल्य.,4,synthetic
+S0224,mobile,OnePlus Nord CE 3,Poor RAM! फसवणूक झाली. परत केले.,2,synthetic
+S0175,mobile,Realme C55,पुन्हा घेईन. नेटवर्क खरोखर amazing आहे.,4,synthetic
+S0314,kitchen,Prestige Gas Stove,पैसे वाया. flame पूर्णपणे bad.,1,synthetic
+S0218,mobile,Redmi A2,Cheap फिंगरप्रिंट! वाईट अनुभव. परत केले.,1,synthetic
+S0563,electronics,Mi Power Bank,"Build quality superb, speed great, आनंद झाला.",5,synthetic
+S0427,fashion,Raymond Suit Length,"Money waste. design cheap, build भंगार.",1,synthetic
+S0582,electronics,Dell Monitor,पातळ quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0486,books,Swami,"Build quality perfect, लेखन चांगला, recommend करते.",5,synthetic
+S0280,kitchen,Wonderchef Knife Set,Delivery वेळेत झाली. Wonderchef Knife Set मस्त आहे. non-stick coating अद्वितीय.,4,synthetic
+S0318,kitchen,Butterfly Mixer,खूप निराशा झाली. हाताळणी कमकुवत आहे.,2,synthetic
+S0482,books,Battatyachi Chal,मला Battatyachi Chal खूप आवडला. cover चांगला आहे.,5,synthetic
+S0337,kitchen,Pigeon Mixer Grinder,Mixed feelings. safety lock perfect पण safety lock थोडे थकलेला.,3,synthetic
+S0183,mobile,Vivo Y27,खूप समाधानी. storage expected पेक्षा premium.,5,synthetic
+S0329,kitchen,Prestige Tawa,Useless साफसफाई! भयानक service. परत केले.,2,synthetic
+S0572,electronics,Sony WH-1000XM4,Sony WH-1000XM4 खरेदी करू नका. build फालतू.,2,synthetic
+S0477,books,Battatyachi Chal,खूप दिवस वापरतोय. cover अजूनही मजबूत आहे. पैसे वसूल झाले.,4,synthetic
+S0117,mobile,iPhone 13,खूप दिवस वापरतोय. build quality अजूनही amazing आहे. आनंद झाला.,5,synthetic
+S0202,mobile,Nothing Phone 2,खूप निराशा झाली. डिस्प्ले cheap आहे.,2,synthetic
+S0391,fashion,Nike Cap,मला Nike Cap खूप आवडला. strap solid आहे.,5,synthetic
+S0573,electronics,Dell Laptop,"Money waste. build flimsy, build खराब.",2,synthetic
+S0369,fashion,Bata Shoes,अप्रतिम अनुभव. sole खरोखर superb आहे.,5,synthetic
+S0352,fashion,Fastrack Watch,छान product! material पण छान. मस्त product.,5,synthetic
+S0405,fashion,Adidas T-Shirt,खूप मस्त कापड! आनंद झाला. नक्की घ्या.,5,synthetic
+S0577,electronics,Sony TV,महिन्यातच bass खराब झाली. पैसे वाया गेले.,2,synthetic
+S0574,electronics,Logitech Mouse,फालतू battery! फसवणूक झाली. परत केले.,1,synthetic
+S0307,kitchen,Havells Iron,खूप दिवस वापरतोय. हाताळणी अजूनही चांगले आहे. खूप आवडले.,5,synthetic
+S0276,kitchen,Cosmo Cookware,हा Cosmo Cookware खूप अद्वितीय आहे. blade चांगली आहे.,4,synthetic
+S0431,fashion,Fastrack Watch,खूप निराशा झाली. color नाजूक आहे.,1,synthetic
+S0417,fashion,Nike Cap,भयानक service. material useless आहे.,2,synthetic
+S0494,books,Punha Ekda,मला Punha Ekda खूप आवडला. भाषा premium आहे.,4,synthetic
+S0206,mobile,Vivo V29,सुमार quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0419,fashion,Bata Sandals,हा Bata Sandals खूप पातळ आहे. फिनिश नाजूक.,2,synthetic
+S0182,mobile,iPhone 14,उपयुक्त processor! आनंद झाला. नक्की घ्या.,5,synthetic
+S0393,fashion,FabIndia Kurta,strap अद्वितीय आहे. किंमतीच्या तुलनेत great.,4,synthetic
+S0207,mobile,Samsung Galaxy A34,Customer care पण मदत करत नाही. फिंगरप्रिंट वाईट.,2,synthetic
+S0411,fashion,Nike Shoes,चांगले material! पुन्हा घेईन. नक्की घ्या.,5,synthetic
+S0109,mobile,Motorola Edge 40,खूप आवडले. processor खरोखर सुंदर आहे.,5,synthetic
+S0514,books,Aagatya,Mixed feelings. कागद सुंदर पण कागद थोडे घाण.,3,synthetic
+S0564,electronics,OnePlus Bullets,खूप समाधानी. range expected पेक्षा perfect.,5,synthetic
+S0198,mobile,Samsung Galaxy A34,हा Samsung Galaxy A34 खूप worst आहे. processor bad.,2,synthetic
+S0193,mobile,Nothing Phone 2,Flimsy quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0220,mobile,Motorola G54,Complaint केली. नेटवर्क घाण आहे.,2,synthetic
+S0328,kitchen,Wonderchef Knife Set,हा Wonderchef Knife Set खूप bad आहे. डिझाईन भंगार.,2,synthetic
+S0338,kitchen,Havells Iron,Expectations पूर्ण नाही पण ठीक. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0322,kitchen,Bajaj Induction Cooktop,सुमार non-stick coating! खराब झाले. परत केले.,1,synthetic
+S0111,mobile,Motorola Edge 40,charging premium आहे. किंमतीच्या तुलनेत solid.,5,synthetic
+S0479,books,Pachola,आरामदायी कथानक! पैसे वसूल झाले. नक्की घ्या.,5,synthetic
+S0342,kitchen,Hawkins Cooker,Mixed feelings. non-stick coating superb पण build cheap.,3,synthetic
+S0158,mobile,iPhone 15,Delivery वेळेत झाली. iPhone 15 premium आहे. processor solid.,5,synthetic
+S0540,electronics,Noise ColorFit,खूप दिवस वापरतोय. battery अजूनही excellent आहे. पैसे वसूल झाले.,4,synthetic
+S0528,electronics,Realme Buds,खूप दिवस वापरतोय. range अजूनही चांगली आहे. recommend करतो.,5,synthetic
+S0368,fashion,Adidas T-Shirt,comfort superb आहे. किंमतीच्या तुलनेत चांगला.,5,synthetic
+S0556,electronics,TP-Link Extender,खूप दिवस वापरतोय. bass अजूनही सुंदर आहे. आनंद झाला.,5,synthetic
+S0165,mobile,Nothing Phone 2a,खूप दिवस वापरतोय. RAM अजूनही उपयुक्त आहे. अप्रतिम अनुभव.,4,synthetic
+S0358,fashion,Lee Cooper Jeans,अप्रतिम! design टिकाऊ आहे आणि किंमत वाजवी.,5,synthetic
+S0194,mobile,iPhone 13,"Money waste. फिंगरप्रिंट useless, build flimsy.",1,synthetic
+S0308,kitchen,Hawkins Cooker,non-stick coating superb आहे. किंमतीच्या तुलनेत खूप मस्त.,5,synthetic
+S0406,fashion,Levi's T-Shirt,मला Levi's T-Shirt खूप आवडला. कापड अप्रतिम आहे.,5,synthetic
+S0445,fashion,Lee Cooper Shoes,Mixed feelings. कापड टिकाऊ पण कापड थोडे फालतू.,3,synthetic
+S0330,kitchen,Pigeon Kettle,हा Pigeon Kettle खूप फालतू आहे. उष्णता कच्चा.,2,synthetic
+S0192,mobile,Poco X5 Pro,गेमिंग performance excellent आहे. किंमतीच्या तुलनेत उपयुक्त.,5,synthetic
+S0230,mobile,Tecno Spark 10 Pro,Mixed feelings. फिंगरप्रिंट great पण फिंगरप्रिंट थोडे खराब.,3,synthetic
+S0594,electronics,JBL Speaker,काही चांगले काही वाईट. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0381,fashion,Nike Shoes,Great product! कापड पण अद्वितीय. आनंद झाला.,4,synthetic
+S0119,mobile,Redmi Note 12,Worth every rupee. grip खरोखर चांगली आहे.,5,synthetic
+S0575,electronics,boAt Smartwatch,battery खूप पातळ आहे. complaint केली.,1,synthetic
+S0247,mobile,OnePlus Nord CE 3,storage अद्वितीय आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0282,kitchen,Milton Tiffin Box,खूप समाधानी. उष्णता expected पेक्षा amazing.,5,synthetic
+S0385,fashion,Puma Shoes,खूप समाधानी. फिनिश expected पेक्षा खूप मस्त.,5,synthetic
+S0346,kitchen,Borosil Microwave,Borosil Microwave किंमतीला अनुसरून ठीक. build ठीक आहे पण special काही नाही.,3,synthetic
+S0374,fashion,FabIndia Kurta,Superb color! पुन्हा घेईन. नक्की घ्या.,4,synthetic
+S0597,electronics,TP-Link Extender,Mixed feelings. bass चांगले पण bass थोडे कमकुवत.,3,synthetic
+S0429,fashion,Biba Salwar Suit,कच्चा sole! भयानक service. परत केले.,1,synthetic
+S0185,mobile,iPhone 15,खूप दिवस वापरतोय. कॅमेरा अजूनही मस्त आहे. पुन्हा घेईन.,4,synthetic
+S0375,fashion,Biba Salwar Suit,Perfect product! comfort पण उत्तम. अप्रतिम अनुभव.,5,synthetic
+S0394,fashion,Allen Solly Shirt,खूप दिवस वापरतोय. sole अजूनही अद्वितीय आहे. पुन्हा घेईन.,4,synthetic
+S0323,kitchen,Cosmo Cookware,Worst डिझाईन! परत करावे लागले. परत केले.,2,synthetic
+S0382,fashion,Levi's Jeans,अप्रतिम! design चांगले आहे आणि किंमत वाजवी.,5,synthetic
+S0441,fashion,Raymond Suit Length,Raymond Suit Length किंमतीला अनुसरून ठीक. comfort ठीक आहे पण special काही नाही.,3,synthetic
+S0299,kitchen,Hawkins Tawa,flame उत्तम आहे. किंमतीच्या तुलनेत उत्तम.,5,synthetic
+S0291,kitchen,Pigeon Mixer Grinder,हाताळणी आरामदायी आहे. किंमतीच्या तुलनेत excellent.,5,synthetic
+S0534,electronics,boAt Smartwatch,खूप दिवस वापरतोय. build अजूनही amazing आहे. सर्वांनी घ्या.,5,synthetic
+S0195,mobile,Samsung Galaxy S23,Samsung Galaxy S23 खरेदी करू नका. build quality फालतू.,1,synthetic
+S0418,fashion,Bata Sandals,भंगार comfort! money waste. परत केले.,2,synthetic
+S0519,books,Pavankhind,काही चांगले काही वाईट. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0387,fashion,Raymond Shirt,मला Raymond Shirt खूप आवडला. कापड premium आहे.,5,synthetic
+S0426,fashion,Levi's Jeans,फालतू quality! किंमतीला अनुसरून नाही.,1,synthetic
+S0399,fashion,Nike Shoes,खूप समाधानी. material expected पेक्षा आरामदायी.,5,synthetic
+S0232,mobile,Oppo A78,Average product. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0233,mobile,Samsung Galaxy S23,Samsung Galaxy S23 ठीक आहे. design ठीक आहे पण special काही नाही.,3,synthetic
+S0521,books,Garambicha Bapu,Mixed feelings. characters चांगला पण characters थोडे flimsy.,3,synthetic
+S0409,fashion,Lee Cooper Shoes,strap अमूल्य आहे. किंमतीच्या तुलनेत मस्त.,4,synthetic
+S0141,mobile,Samsung Galaxy F14,खूप दिवस वापरतोय. बॅटरी अजूनही solid आहे. पैसे वसूल झाले.,5,synthetic
+S0102,mobile,Samsung Galaxy S23,खूप दिवस वापरतोय. processor अजूनही मस्त आहे. आनंद झाला.,4,synthetic
+S0416,fashion,Lee Cooper Jeans,पैसे वाया. material पूर्णपणे नाजूक.,1,synthetic
+S0438,fashion,Levi's T-Shirt,Mixed feelings. साईज छान पण साईज थोडे कमकुवत.,3,synthetic
+S0281,kitchen,Cello Lunch Box,अद्वितीय product! मोटर पण सुंदर. समाधानी आहे.,5,synthetic
+S0103,mobile,Motorola G54,Delivery वेळेत झाली. Motorola G54 perfect आहे. grip उपयुक्त.,5,synthetic
+S0437,fashion,Raymond Shirt,"काही गोष्टी अमूल्य, काही poor. एकूणच ठीक.",3,synthetic
+S0422,fashion,Peter England Trouser,Peter England Trouser खरेदी करू नका. strap घाण.,1,synthetic
+S0462,books,Garambicha Bapu,खूप दिवस वापरतोय. cover अजूनही solid आहे. अप्रतिम अनुभव.,5,synthetic
+S0268,kitchen,Prestige Gas Stove,Prestige Gas Stove फार great. उष्णता आणि design दोन्ही टिकाऊ.,5,synthetic
+S0289,kitchen,Butterfly Mixer,खूप समाधानी. मोटर expected पेक्षा सुंदर.,5,synthetic
+S0270,kitchen,Cosmo Cookware,हा Cosmo Cookware खूप अद्वितीय आहे. blade उत्तम आहे.,5,synthetic
+S0345,kitchen,Lifelong Sandwich Maker,Mixed feelings. non-stick coating अप्रतिम पण non-stick coating थोडे useless.,3,synthetic
+S0339,kitchen,Lifelong Hand Blender,Okay-ish आहे. मोटर उपयुक्त पण build वाईट.,3,synthetic
+S0255,kitchen,Cosmo Cookware,हा Cosmo Cookware खूप खूप मस्त आहे. हाताळणी premium आहे.,5,synthetic
+S0480,books,Duniyadari,खूप समाधानी. characters expected पेक्षा टिकाऊ.,5,synthetic
+S0216,mobile,Nothing Phone 2,पैसे वाया. RAM पूर्णपणे घाण.,2,synthetic
+S0129,mobile,Redmi Note 13 Pro,"Build quality excellent, charging superb, worth every rupee.",5,synthetic
+S0343,kitchen,Milton Water Bottle,Mixed feelings. blade मस्त पण blade थोडे worst.,3,synthetic
+S0336,kitchen,Hawkins Tawa,उष्णता खूप खराब आहे. money waste.,2,synthetic
+S0122,mobile,iPhone 15,खूप समाधानी. कॅमेरा expected पेक्षा सुंदर.,5,synthetic
+S0162,mobile,Oppo A78,अप्रतिम! नेटवर्क चांगला आहे आणि किंमत वाजवी.,5,synthetic
+S0114,mobile,Redmi A2,खूप दिवस वापरतोय. गेमिंग performance अजूनही छान आहे. worth every rupee.,4,synthetic
+S0537,electronics,Boat Headphones,Blown away. noise cancellation खरोखर amazing आहे.,5,synthetic
+S0402,fashion,Nike Shoes,खूप समाधानी. साईज expected पेक्षा चांगली.,5,synthetic
+S0286,kitchen,Lifelong Sandwich Maker,Delivery वेळेत झाली. Lifelong Sandwich Maker छान आहे. साफसफाई superb.,5,synthetic
+S0596,electronics,Mi Smart Band,Mi Smart Band expectations पूर्ण नाही पण ठीक. noise cancellation ठीक आहे पण special काही नाही.,3,synthetic
+S0278,kitchen,Philips Air Fryer,हाताळणी उपयुक्त आहे. किंमतीच्या तुलनेत amazing.,5,synthetic
+S0367,fashion,Biba Salwar Suit,हा Biba Salwar Suit खूप excellent आहे. stitching perfect आहे.,5,synthetic
+S0116,mobile,Vivo Y27,"Build quality अमूल्य, डिस्प्ले चांगला, खूप आवडले.",5,synthetic
+S0580,electronics,JBL Speaker,JBL Speaker खरेदी करू नका. speed खराब.,2,synthetic
+S0274,kitchen,Cosmo Cookware,Cosmo Cookware फार छान. हाताळणी आणि design दोन्ही superb.,4,synthetic
+S0266,kitchen,Hawkins Cooker,खूप दिवस वापरतोय. हाताळणी अजूनही perfect आहे. value for money.,5,synthetic
+S0313,kitchen,Philips Air Fryer,हा Philips Air Fryer खूप सुमार आहे. warranty useless.,2,synthetic
+S0442,fashion,Puma Shoes,ठीक आहे. फिनिश टिकाऊ पण build useless.,3,synthetic
+S0386,fashion,Bata Sandals,अप्रतिम! design उपयुक्त आहे आणि किंमत वाजवी.,5,synthetic
+S0250,kitchen,Prestige Gas Stove,Delivery वेळेत झाली. Prestige Gas Stove great आहे. non-stick coating excellent.,5,synthetic
+S0200,mobile,Nothing Phone 2a,खूप निराशा झाली. design worst आहे.,1,synthetic
+S0553,electronics,Logitech Keyboard,खूप दिवस वापरतोय. connectivity अजूनही मस्त आहे. value for money.,5,synthetic
+S0179,mobile,iPhone 14,"Build quality उपयुक्त, grip मजबूत, worth every rupee.",5,synthetic
+S0204,mobile,Redmi Note 13 Pro,घाण बॅटरी! वाईट अनुभव. परत केले.,1,synthetic
+S0140,mobile,Vivo Y27,"Build quality अप्रतिम, processor अद्वितीय, blown away.",5,synthetic
+S0258,kitchen,Milton Tiffin Box,अप्रतिम! साफसफाई great आहे आणि किंमत वाजवी.,5,synthetic
+S0557,electronics,Dell Laptop,खूप समाधानी. build expected पेक्षा चांगली.,4,synthetic
+S0555,electronics,TP-Link Extender,TP-Link Extender फार मजबूत. range आणि design दोन्ही अद्वितीय.,5,synthetic
+S0178,mobile,Poco X5 Pro,"Build quality premium, sound उत्तम, अप्रतिम अनुभव.",5,synthetic
+S0488,books,Tuzhi Vahani,छान cover! recommend करते. नक्की घ्या.,5,synthetic
+S0305,kitchen,Prestige Tawa,हा Prestige Tawa खूप चांगले आहे. डिझाईन solid आहे.,5,synthetic
+S0586,electronics,Sony TV,पातळ डिस्प्ले! परत करावे लागले. परत केले.,1,synthetic
+S0567,electronics,Realme Buds,हा Realme Buds खूप टिकाऊ आहे. pair होणे मजबूत आहे.,5,synthetic
+S0356,fashion,Allen Solly Trouser,खूप दिवस वापरतोय. comfort अजूनही अप्रतिम आहे. समाधानी आहे.,4,synthetic
+S0246,mobile,Vivo Y27,Mixed feelings. build quality सुंदर पण build quality थोडे bad.,3,synthetic
+S0359,fashion,Levi's T-Shirt,"Build quality solid, strap मजबूत, recommend करतो.",5,synthetic
+S0576,electronics,Logitech Mouse,Worst quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0591,electronics,Apple Watch,Mixed feelings. connectivity चांगली पण connectivity थोडे cheap.,3,synthetic
+S0120,mobile,Realme C55,हा Realme C55 खूप अद्वितीय आहे. 5G connectivity excellent आहे.,5,synthetic
+S0210,mobile,Motorola G54,Description प्रमाणे नाही. कॅमेरा पातळ. नका घेऊ.,2,synthetic
+S0234,mobile,Redmi Note 12,Redmi Note 12 average product. फिंगरप्रिंट ठीक आहे पण special काही नाही.,3,synthetic
+S0107,mobile,OnePlus Nord CE 3,OnePlus Nord CE 3 फार टिकाऊ. कॅमेरा आणि design दोन्ही अप्रतिम.,4,synthetic
+S0134,mobile,Tecno Spark 10 Pro,अप्रतिम sound! खूप आवडले. नक्की घ्या.,4,synthetic
+S0562,electronics,JBL Headphones,अप्रतिम अनुभव. connectivity खरोखर premium आहे.,5,synthetic
+S0137,mobile,Realme 11 Pro,Realme 11 Pro फार अद्वितीय. design आणि design दोन्ही छान.,5,synthetic
+S0341,kitchen,Butterfly Mixer,Expectations पूर्ण नाही पण ठीक. safety lock सुंदर पण build खराब.,3,synthetic
+S0188,mobile,Vivo V29,मस्त product! design पण चांगला. समाधानी आहे.,5,synthetic
+S0379,fashion,Lee Cooper Jeans,Lee Cooper Jeans फार खूप मस्त. color आणि design दोन्ही मजबूत.,5,synthetic
+S0287,kitchen,Lifelong Sandwich Maker,अप्रतिम! build superb आहे आणि किंमत वाजवी.,5,synthetic
+S0315,kitchen,Milton Tiffin Box,blade खूप भंगार आहे. महिन्यातच खराब.,1,synthetic
+S0298,kitchen,Cello Bottle,हा Cello Bottle खूप solid आहे. capacity उपयुक्त आहे.,4,synthetic
+S0454,books,Mrityunjay,Mrityunjay फार excellent. characters आणि design दोन्ही चांगले.,5,synthetic
+S0262,kitchen,Borosil Glass Set,अप्रतिम! build अद्वितीय आहे आणि किंमत वाजवी.,5,synthetic
+S0513,books,Swami,Swami खरेदी करू नका. binding थकलेला.,1,synthetic
+S0106,mobile,Tecno Spark 10 Pro,Superb sound! blown away. नक्की घ्या.,4,synthetic
+S0370,fashion,Lee Cooper Jeans,खूप समाधानी. strap expected पेक्षा मस्त.,4,synthetic
+S0498,books,Swami,हा Swami खूप सुमार आहे. भाषा worst.,2,synthetic
+S0355,fashion,Lee Cooper Shoes,Great quality! recommend करते. नक्की घ्या.,5,synthetic
+S0223,mobile,Realme C55,"Money waste. build quality थकलेला, build फालतू.",2,synthetic
+S0157,mobile,Nothing Phone 2,खूप समाधानी. RAM expected पेक्षा चांगला.,5,synthetic
+S0297,kitchen,Hawkins Cooker,मस्त warranty! recommend करतो. नक्की घ्या.,5,synthetic
+S0526,electronics,Dell Laptop,हा Dell Laptop खूप खूप मस्त आहे. sound quality perfect आहे.,5,synthetic
+S0222,mobile,Vivo V29,महिन्यातच grip खराब झाली. पैसे वाया गेले.,1,synthetic
+S0127,mobile,Redmi A2,मस्त बॅटरी! recommend करतो. नक्की घ्या.,4,synthetic
+S0251,kitchen,Pigeon Kettle,उपयुक्त warranty! value for money. नक्की घ्या.,5,synthetic
+S0300,kitchen,Bajaj Mixer,"Build quality आरामदायी, flame premium, अप्रतिम अनुभव.",5,synthetic
+S0196,mobile,Samsung Galaxy S23,पैसे वाया. डिस्प्ले पूर्णपणे नाजूक.,2,synthetic
+S0360,fashion,Adidas T-Shirt,अप्रतिम! साईज सुंदर आहे आणि किंमत वाजवी.,5,synthetic
+S0581,electronics,boAt Smartwatch,Bad build! महिन्यातच खराब. परत केले.,1,synthetic
+S0205,mobile,iPhone 15,भयानक service. फिंगरप्रिंट bad आहे.,1,synthetic
+S0495,books,Vyakti ani Valli,खूप दिवस वापरतोय. characters अजूनही perfect आहे. सर्वांनी घ्या.,4,synthetic
+S0113,mobile,Motorola G54,हा Motorola G54 खूप मस्त आहे. RAM premium आहे.,5,synthetic
+S0523,books,Mrityunjay,Specifically काही खास नाही. कथा उपयुक्त पण build नाजूक.,3,synthetic
+S0407,fashion,Raymond Suit Length,मला Raymond Suit Length खूप आवडला. quality छान आहे.,5,synthetic
+S0383,fashion,Wildcraft Backpack,हा Wildcraft Backpack खूप उत्तम आहे. साईज सुंदर आहे.,5,synthetic
+S0583,electronics,Sony WH-1000XM4,खराब build! परत करावे लागले. परत केले.,1,synthetic
+S0143,mobile,Redmi Note 13 Pro,खूप मस्त design! पुन्हा घेईन. नक्की घ्या.,5,synthetic
+S0590,electronics,Boat Headphones,Boat Headphones काही चांगले काही वाईट. noise cancellation ठीक आहे पण special काही नाही.,3,synthetic
+S0578,electronics,Dell Monitor,महिन्यातच warranty खराब झाली. पैसे वाया गेले.,2,synthetic
+S0481,books,Duniyadari,खूप दिवस वापरतोय. भाषा अजूनही solid आहे. मस्त product.,5,synthetic
+S0261,kitchen,Borosil Glass Set,सुंदर साफसफाई! अप्रतिम अनुभव. नक्की घ्या.,4,synthetic
+S0476,books,Natsamrat,translation मजबूत आहे. किंमतीच्या तुलनेत अप्रतिम.,5,synthetic
+S0430,fashion,Wildcraft Backpack,Description प्रमाणे नाही. फिनिश खराब. निराशा झाली.,2,synthetic
+S0450,books,Pratinidhi,अप्रतिम अनुभव. characters खरोखर excellent आहे.,5,synthetic
+S0401,fashion,Allen Solly Trouser,अप्रतिम! stitching मजबूत आहे आणि किंमत वाजवी.,5,synthetic
+S0505,books,Punha Ekda,खूप निराशा झाली. translation कच्चा आहे.,1,synthetic
+S0171,mobile,Oppo A78,Oppo A78 फार अमूल्य. फिंगरप्रिंट आणि design दोन्ही आरामदायी.,5,synthetic
+S0151,mobile,iPhone 15,Delivery वेळेत झाली. iPhone 15 अमूल्य आहे. processor टिकाऊ.,5,synthetic
+S0144,mobile,iPhone 14,खूप दिवस वापरतोय. design अजूनही perfect आहे. अप्रतिम अनुभव.,5,synthetic
+S0530,electronics,Mi Power Bank,खूप समाधानी. build expected पेक्षा टिकाऊ.,4,synthetic
+S0326,kitchen,Philips Air Fryer,पैसे वाया. safety lock पूर्णपणे वाईट.,1,synthetic
+S0415,fashion,Peter England Trouser,Customer care पण मदत करत नाही. कापड थकलेला.,1,synthetic
+S0593,electronics,Apple Watch,Mixed feelings. build perfect पण build थोडे सुमार.,3,synthetic
+S0177,mobile,Motorola Edge 40,मला Motorola Edge 40 खूप आवडला. processor आरामदायी आहे.,5,synthetic
+S0568,electronics,Mi Smart Band,अप्रतिम! connectivity मस्त आहे आणि किंमत वाजवी.,5,synthetic
+S0470,books,Mrityunjay,Delivery वेळेत झाली. Mrityunjay great आहे. binding चांगली.,5,synthetic
+S0279,kitchen,Pigeon Kettle,Superb blade! आनंद झाला. नक्की घ्या.,5,synthetic
+S0516,books,Garambicha Bapu,Expected पेक्षा कमी. पण use करण्यासारखे आहे.,3,synthetic
+S0595,electronics,Boat Speaker,speed अमूल्य आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0485,books,Garambicha Bapu,"Build quality amazing, भाषा उत्तम, पैसे वसूल झाले.",5,synthetic
+S0412,fashion,Peter England Trouser,पैसे वाया. stitching पूर्णपणे नाजूक.,1,synthetic
+S0473,books,Tuzhi Vahani,cover अमूल्य आहे. किंमतीच्या तुलनेत चांगले.,4,synthetic
+S0388,fashion,Allen Solly Shirt,"Build quality perfect, फिनिश excellent, blown away.",5,synthetic
+S0371,fashion,H&M Top,मस्त material! खूप आवडले. नक्की घ्या.,5,synthetic
+S0135,mobile,Redmi 12,चांगला RAM! आनंद झाला. नक्की घ्या.,5,synthetic
+S0173,mobile,Redmi Note 13 Pro,मला Redmi Note 13 Pro खूप आवडला. 5G connectivity अमूल्य आहे.,5,synthetic
+S0428,fashion,Raymond Shirt,Cheap material! वाईट अनुभव. परत केले.,2,synthetic
+S0168,mobile,Redmi Note 13 Pro,खूप दिवस वापरतोय. फिंगरप्रिंट अजूनही उत्तम आहे. पैसे वसूल झाले.,5,synthetic
+S0295,kitchen,Bajaj Induction Cooktop,Bajaj Induction Cooktop फार premium. डिझाईन आणि design दोन्ही अमूल्य.,5,synthetic
+S0170,mobile,Redmi A2,Premium product! बॅटरी पण चांगले. worth every rupee.,5,synthetic
+S0253,kitchen,Hawkins Cooker,"Build quality great, safety lock सुंदर, समाधानी आहे.",5,synthetic
+S0552,electronics,Mi Power Bank,उपयुक्त product! bass पण अमूल्य. worth every rupee.,4,synthetic
+S0260,kitchen,Prestige Tawa,build उत्तम आहे. किंमतीच्या तुलनेत अद्वितीय.,5,synthetic
+S0463,books,Pavankhind,खूप समाधानी. printing quality expected पेक्षा perfect.,4,synthetic
+S0152,mobile,Vivo Y27,अप्रतिम! sound अप्रतिम आहे आणि किंमत वाजवी.,5,synthetic
+S0145,mobile,iPhone 14,खूप समाधानी. processor expected पेक्षा छान.,5,synthetic
+S0296,kitchen,Bajaj Induction Cooktop,"Build quality premium, blade मस्त, value for money.",4,synthetic
+S0217,mobile,OnePlus 11R,"Money waste. charging कच्चा, build थकलेला.",1,synthetic
+S0136,mobile,iQOO Z7,मला iQOO Z7 खूप आवडला. design चांगले आहे.,5,synthetic
+S0469,books,Kosla,translation छान आहे. किंमतीच्या तुलनेत चांगली.,5,synthetic
+S0467,books,Natsamrat,Delivery वेळेत झाली. Natsamrat great आहे. कथानक great.,4,synthetic
+S0554,electronics,Dell Monitor,मला Dell Monitor खूप आवडला. battery चांगला आहे.,5,synthetic
+S0316,kitchen,Philips Mixer,"Money waste. warranty कच्चा, build bad.",2,synthetic
+S0161,mobile,Nothing Phone 2,Perfect product! storage पण उपयुक्त. सर्वांनी घ्या.,4,synthetic
+S0515,books,Pratinidhi,Pratinidhi mixed feelings. cover ठीक आहे पण special काही नाही.,3,synthetic
+S0456,books,Aaicha Gao,Aaicha Gao फार आरामदायी. translation आणि design दोन्ही premium.,5,synthetic
+S0461,books,Garambicha Bapu,सुंदर product! characters पण छान. पुन्हा घेईन.,5,synthetic
+S0104,mobile,iQOO Z7,Delivery वेळेत झाली. iQOO Z7 खूप मस्त आहे. गेमिंग performance चांगली.,5,synthetic
+S0327,kitchen,Lifelong Sandwich Maker,capacity खूप कच्चा आहे. पैसे वाया गेले.,1,synthetic
+S0448,fashion,Puma T-Shirt,"काही गोष्टी solid, काही वाईट. एकूणच ठीक.",3,synthetic
+S0365,fashion,Wildcraft Backpack,खूप दिवस वापरतोय. comfort अजूनही खूप मस्त आहे. पुन्हा घेईन.,4,synthetic
+S0215,mobile,Samsung Galaxy F14,design खूप poor आहे. फसवणूक झाली.,1,synthetic
+S0403,fashion,Biba Salwar Suit,हा Biba Salwar Suit खूप superb आहे. comfort उपयुक्त आहे.,5,synthetic
+S0497,books,Pavankhind,Description प्रमाणे नाही. binding थकलेला. money waste.,1,synthetic
+S0139,mobile,Redmi 12,Delivery वेळेत झाली. Redmi 12 perfect आहे. processor अद्वितीय.,5,synthetic
+S0344,kitchen,Prestige Tawa,"काही गोष्टी सुंदर, काही कच्चा. एकूणच ठीक.",3,synthetic
+S0209,mobile,Vivo Y27,पैसे वाया. build quality पूर्णपणे घाण.,2,synthetic
+S0508,books,Punha Ekda,"Money waste. छपाई घाण, build कमकुवत.",2,synthetic
+S0598,electronics,Logitech Keyboard,Expected पेक्षा कमी. पण use करण्यासारखे आहे.,3,synthetic
+S0460,books,Pachola,समाधानी आहे. printing quality खरोखर उत्तम आहे.,5,synthetic
+S0146,mobile,iPhone 15,"Build quality छान, बॅटरी amazing, value for money.",5,synthetic
+S0491,books,Mrityunjay,आरामदायी product! binding पण अप्रतिम. सर्वांनी घ्या.,5,synthetic
+S0500,books,Mrityunjay,महिन्यातच छपाई खराब झाली. money waste.,1,synthetic
+S0219,mobile,Redmi Note 13 Pro,Customer care पण मदत करत नाही. storage कमकुवत.,1,synthetic
+S0458,books,Pavankhind,खूप दिवस वापरतोय. printing quality अजूनही मस्त आहे. blown away.,4,synthetic
+S0471,books,Mrityunjay,मला Mrityunjay खूप आवडला. कथा सुंदर आहे.,4,synthetic
+S0256,kitchen,Pigeon Induction Cooktop,आरामदायी हाताळणी! blown away. नक्की घ्या.,5,synthetic
+S0509,books,Garambicha Bapu,Customer care पण मदत करत नाही. भाषा कमकुवत.,1,synthetic
+S0302,kitchen,Butterfly Wet Grinder,अमूल्य safety lock! अप्रतिम अनुभव. नक्की घ्या.,5,synthetic
+S0126,mobile,Poco X5 Pro,Delivery वेळेत झाली. Poco X5 Pro great आहे. sound खूप मस्त.,5,synthetic
+S0184,mobile,Redmi Note 13 Pro,अप्रतिम! grip अप्रतिम आहे आणि किंमत वाजवी.,5,synthetic
+S0545,electronics,Sony WH-1000XM4,मला Sony WH-1000XM4 खूप आवडला. range solid आहे.,5,synthetic
+S0538,electronics,Mi Power Bank,खूप आवडले. connectivity खरोखर चांगली आहे.,5,synthetic
+S0290,kitchen,Pigeon Mixer Grinder,खूप दिवस वापरतोय. blade अजूनही सुंदर आहे. अप्रतिम अनुभव.,5,synthetic
+S0142,mobile,Redmi Note 13 Pro,हा Redmi Note 13 Pro खूप great आहे. design great आहे.,5,synthetic
+S0228,mobile,Redmi A2,sound खूप पातळ आहे. पैसे वाया गेले.,2,synthetic
+S0284,kitchen,Philips Air Fryer,खूप समाधानी. safety lock expected पेक्षा amazing.,4,synthetic
+S0588,electronics,Canon Camera,खूप निराशा झाली. डिस्प्ले useless आहे.,2,synthetic
+S0542,electronics,Boat Headphones,"Build quality अमूल्य, pair होणे अद्वितीय, value for money.",4,synthetic
+S0240,mobile,Vivo Y27,काही चांगले काही वाईट. build quality superb पण build flimsy.,3,synthetic
+S0181,mobile,Poco X5 Pro,Delivery वेळेत झाली. Poco X5 Pro सुंदर आहे. 5G connectivity टिकाऊ.,5,synthetic
+S0254,kitchen,Prestige Gas Stove,पुन्हा घेईन. flame खरोखर अप्रतिम आहे.,5,synthetic
+S0432,fashion,Biba Salwar Suit,Customer care पण मदत करत नाही. quality worst.,2,synthetic
+S0584,electronics,OnePlus Bullets,Customer care पण मदत करत नाही. bass useless.,2,synthetic
+S0452,books,Swami,खूप समाधानी. कथा expected पेक्षा अद्वितीय.,4,synthetic
+S0203,mobile,OnePlus 11R,"Money waste. 5G connectivity वाईट, build भंगार.",2,synthetic
+S0529,electronics,JBL Speaker,मस्त product. warranty खरोखर excellent आहे.,4,synthetic
+S0100,mobile,Poco M6 Pro,खूप समाधानी. कॅमेरा expected पेक्षा खूप मस्त.,4,synthetic
+S0333,kitchen,Prestige Mixer Grinder,Customer care पण मदत करत नाही. उष्णता worst.,2,synthetic
+S0325,kitchen,Cosmo Cookware,Customer care पण मदत करत नाही. blade poor.,2,synthetic
+S0180,mobile,Redmi Note 12,processor उपयुक्त आहे. किंमतीच्या तुलनेत premium.,5,synthetic
+S0163,mobile,OnePlus Nord CE 3,हा OnePlus Nord CE 3 खूप उपयुक्त आहे. डिस्प्ले चांगला आहे.,5,synthetic
+S0108,mobile,Poco X5 Pro,हा Poco X5 Pro खूप आरामदायी आहे. नेटवर्क amazing आहे.,5,synthetic
+S0335,kitchen,Prestige Gas Stove,Description प्रमाणे नाही. मोटर कमकुवत. निराशा झाली.,2,synthetic
+S0501,books,Mrityunjay,पैसे वाया. characters पूर्णपणे useless.,2,synthetic
+S0420,fashion,FabIndia Kurta,Useless stitching! परत करावे लागले. परत केले.,1,synthetic
+S0150,mobile,OnePlus 11R,खूप समाधानी. 5G connectivity expected पेक्षा excellent.,4,synthetic
+S0123,mobile,Infinix Note 30,अमूल्य product! build quality पण excellent. blown away.,4,synthetic
+S0124,mobile,Tecno Spark 10 Pro,grip सुंदर आहे. किंमतीच्या तुलनेत solid.,5,synthetic
+S0490,books,Shyamchi Aai,अमूल्य product! binding पण खूप मस्त. अप्रतिम अनुभव.,4,synthetic
+S0449,fashion,Adidas Shoes,Mixed feelings. quality amazing पण quality थोडे थकलेला.,3,synthetic
+S0275,kitchen,Hawkins Tawa,खूप समाधानी. build expected पेक्षा अप्रतिम.,5,synthetic
+S0503,books,Tuzhi Vahani,Customer care पण मदत करत नाही. छपाई worst.,1,synthetic
+S0348,kitchen,Pigeon Mixer Grinder,डिझाईन अप्रतिम आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0389,fashion,Levi's Jeans,मला Levi's Jeans खूप आवडला. साईज great आहे.,5,synthetic
+S0166,mobile,Tecno Spark 10 Pro,मला Tecno Spark 10 Pro खूप आवडला. डिस्प्ले चांगली आहे.,4,synthetic
+S0571,electronics,Mi Smart Band,पैसे वाया. connectivity पूर्णपणे worst.,2,synthetic
+S0380,fashion,Lee Cooper Shoes,चांगला कापड! पुन्हा घेईन. नक्की घ्या.,5,synthetic
+S0272,kitchen,Hawkins Cooker,Hawkins Cooker फार टिकाऊ. warranty आणि design दोन्ही solid.,5,synthetic
+S0245,mobile,Nothing Phone 2,Okay-ish आहे. गेमिंग performance amazing पण build फालतू.,3,synthetic
+S0265,kitchen,Wonderchef Knife Set,मला Wonderchef Knife Set खूप आवडला. डिझाईन great आहे.,5,synthetic
+S0569,electronics,OnePlus Bullets,OnePlus Bullets फार मस्त. warranty आणि design दोन्ही अद्वितीय.,5,synthetic
+S0353,fashion,Adidas Shoes,अप्रतिम! stitching superb आहे आणि किंमत वाजवी.,5,synthetic
+S0208,mobile,Redmi Note 12,महिन्यातच processor खराब झाली. खराब झाले.,1,synthetic
+S0522,books,Aagatya,Average product. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0319,kitchen,Hawkins Cooker,खूप निराशा झाली. flame bad आहे.,1,synthetic
+S0211,mobile,OnePlus 11R,Customer care पण मदत करत नाही. grip bad.,1,synthetic
+S0303,kitchen,Milton Tiffin Box,Milton Tiffin Box फार आरामदायी. build आणि design दोन्ही उत्तम.,5,synthetic
+S0373,fashion,H&M Dress,design टिकाऊ आहे. किंमतीच्या तुलनेत excellent.,5,synthetic
+S0507,books,Battatyachi Chal,cover खूप सुमार आहे. भयानक service.,2,synthetic
+S0132,mobile,iPhone 15,हा iPhone 15 खूप amazing आहे. बॅटरी perfect आहे.,5,synthetic
+S0535,electronics,JBL Speaker,Amazing product! signal पण great. पुन्हा घेईन.,4,synthetic
+S0283,kitchen,Philips Mixer,सुंदर product! flame पण चांगले. worth every rupee.,5,synthetic
+S0457,books,Aagatya,Delivery वेळेत झाली. Aagatya superb आहे. printing quality great.,5,synthetic
+S0440,fashion,Wildcraft Jacket,किंमतीला अनुसरून ठीक. design superb पण build खराब.,3,synthetic
+S0425,fashion,H&M Dress,घाण quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0334,kitchen,Borosil Glass Set,Customer care पण मदत करत नाही. हाताळणी फालतू.,1,synthetic
+S0474,books,Wakaee,Delivery वेळेत झाली. Wakaee अमूल्य आहे. कथानक चांगली.,5,synthetic
+S0559,electronics,Logitech Keyboard,battery amazing आहे. किंमतीच्या तुलनेत चांगले.,5,synthetic
+S0475,books,Aamhi Bhagirathache,आनंद झाला. कथानक खरोखर चांगले आहे.,5,synthetic
+S0533,electronics,Boat Speaker,Recommend करतो. pair होणे खरोखर खूप मस्त आहे.,5,synthetic
+S0496,books,Shyamchi Aai,खूप निराशा झाली. कथा फालतू आहे.,2,synthetic
+S0544,electronics,Fire-Boltt Watch,Delivery वेळेत झाली. Fire-Boltt Watch सुंदर आहे. warranty मस्त.,4,synthetic
+S0101,mobile,Samsung Galaxy F14,हा Samsung Galaxy F14 खूप perfect आहे. grip अप्रतिम आहे.,5,synthetic
+S0397,fashion,Biba Salwar Suit,Recommend करतो. strap खरोखर मजबूत आहे.,5,synthetic
+S0267,kitchen,Cello Bottle,खूप आवडले. build खरोखर amazing आहे.,5,synthetic
+S0349,kitchen,Lifelong Sandwich Maker,Mixed feelings. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0332,kitchen,Borosil Glass Set,Borosil Glass Set खरेदी करू नका. warranty cheap.,1,synthetic
+S0288,kitchen,Philips Mixer,Philips Mixer फार premium. डिझाईन आणि design दोन्ही premium.,5,synthetic
+S0549,electronics,TP-Link Extender,पैसे वसूल झाले. warranty खरोखर मजबूत आहे.,4,synthetic
+S0455,books,Pratinidhi,"Build quality टिकाऊ, translation मजबूत, recommend करते.",5,synthetic
+S0242,mobile,Redmi A2,Expectations पूर्ण नाही पण ठीक. नेटवर्क अमूल्य पण build कमकुवत.,3,synthetic
+S0483,books,Natsamrat,खूप दिवस वापरतोय. translation अजूनही great आहे. blown away.,5,synthetic
+S0363,fashion,W Dress,फिनिश टिकाऊ आहे. किंमतीच्या तुलनेत solid.,5,synthetic
+S0306,kitchen,Prestige Gas Stove,मस्त product! उष्णता पण चांगला. blown away.,5,synthetic
+S0147,mobile,Redmi Note 13 Pro,Excellent product! बॅटरी पण अप्रतिम. recommend करते.,4,synthetic
+S0493,books,Aagatya,Value for money. binding खरोखर आरामदायी आहे.,5,synthetic
+S0550,electronics,Fire-Boltt Watch,Fire-Boltt Watch फार perfect. battery आणि design दोन्ही मस्त.,5,synthetic
+S0506,books,Yayati,पैसे वाया. translation पूर्णपणे flimsy.,1,synthetic
+S0424,fashion,Manyavar Sherwani,कच्चा quality! किंमतीला अनुसरून नाही.,1,synthetic
+S0138,mobile,Samsung Galaxy F14,खूप दिवस वापरतोय. बॅटरी अजूनही टिकाऊ आहे. blown away.,5,synthetic
+S0331,kitchen,Pigeon Mixer Grinder,खूप निराशा झाली. non-stick coating सुमार आहे.,2,synthetic
+S0292,kitchen,Philips Mixer,सुंदर product! flame पण मजबूत. blown away.,4,synthetic
+S0312,kitchen,Borosil Glass Set,Borosil Glass Set खरेदी करू नका. flame poor.,1,synthetic
+S0421,fashion,Nike Shoes,Description प्रमाणे नाही. color poor. परत करावे लागले.,2,synthetic
+S0237,mobile,OnePlus 11R,Expected पेक्षा कमी. पण use करण्यासारखे आहे.,3,synthetic
+S0423,fashion,Allen Solly Shirt,पैसे वाया. फिनिश पूर्णपणे पातळ.,2,synthetic
+S0395,fashion,Manyavar Sherwani,"Build quality मजबूत, फिटिंग सुंदर, सर्वांनी घ्या.",5,synthetic
+S0172,mobile,iQOO Neo 7,Delivery वेळेत झाली. iQOO Neo 7 मजबूत आहे. RAM खूप मस्त.,5,synthetic
+S0350,fashion,Adidas Shoes,Adidas Shoes फार चांगला. comfort आणि design दोन्ही अद्वितीय.,5,synthetic
+S0301,kitchen,Milton Water Bottle,चांगला warranty! समाधानी आहे. नक्की घ्या.,4,synthetic
+S0446,fashion,FabIndia Kurta,फिनिश perfect आहे पण किंमतीला अनुसरून मध्यम.,3,synthetic
+S0531,electronics,JBL Headphones,JBL Headphones फार premium. connectivity आणि design दोन्ही अप्रतिम.,5,synthetic
+S0489,books,Aamhi Bhagirathache,खूप समाधानी. कथा expected पेक्षा perfect.,5,synthetic
+S0226,mobile,Redmi 12,"Money waste. sound खराब, build पातळ.",1,synthetic
+S0524,books,Battatyachi Chal,"काही गोष्टी चांगले, काही useless. एकूणच ठीक.",3,synthetic
+S0264,kitchen,Hawkins Cooker,अप्रतिम! हाताळणी अमूल्य आहे आणि किंमत वाजवी.,5,synthetic
+S0464,books,Aamhi Bhagirathache,खूप दिवस वापरतोय. छपाई अजूनही मस्त आहे. समाधानी आहे.,5,synthetic
+S0174,mobile,Nothing Phone 2,मजबूत product! फिंगरप्रिंट पण उपयुक्त. आनंद झाला.,5,synthetic
+S0227,mobile,iPhone 13,Description प्रमाणे नाही. build quality useless. नका घेऊ.,2,synthetic
+S0167,mobile,iQOO Z7,Delivery वेळेत झाली. iQOO Z7 उपयुक्त आहे. नेटवर्क premium.,5,synthetic
+S0589,electronics,OnePlus Bullets,Mixed feelings. speed great पण speed थोडे पातळ.,3,synthetic
+S0459,books,Pratinidhi,खूप समाधानी. कागद expected पेक्षा great.,5,synthetic
+S0164,mobile,Infinix Note 30,मला Infinix Note 30 खूप आवडला. sound चांगले आहे.,5,synthetic
+S0435,fashion,Fastrack Watch,"Money waste. color कमकुवत, build poor.",1,synthetic
+S0543,electronics,Canon Camera,चांगली product! range पण premium. आनंद झाला.,5,synthetic
+S0241,mobile,Redmi A2,Expected पेक्षा कमी. पण use करण्यासारखे आहे.,3,synthetic
+S0130,mobile,Nothing Phone 2a,Nothing Phone 2a फार चांगले. build quality आणि design दोन्ही सुंदर.,5,synthetic
+S0570,electronics,TP-Link Router,Excellent signal! मस्त product. नक्की घ्या.,5,synthetic
+S0310,kitchen,Pigeon Mixer Grinder,मोटर आरामदायी आहे. किंमतीच्या तुलनेत मस्त.,5,synthetic
+S0502,books,Aamhi Bhagirathache,कच्चा quality! किंमतीला अनुसरून नाही.,2,synthetic
+S0484,books,Kosla,खूप समाधानी. कथानक expected पेक्षा superb.,5,synthetic
+S0592,electronics,Apple AirPods,काही चांगले काही वाईट. कोणाला आवडेल कोणाला नाही.,3,synthetic
+S0169,mobile,Redmi 12,खूप दिवस वापरतोय. गेमिंग performance अजूनही अद्वितीय आहे. पुन्हा घेईन.,5,synthetic
+S0148,mobile,Motorola Edge 40,अप्रतिम! गेमिंग performance मस्त आहे आणि किंमत वाजवी.,5,synthetic
+S0517,books,Battatyachi Chal,Battatyachi Chal काही चांगले काही वाईट. कथा ठीक आहे पण special काही नाही.,3,synthetic

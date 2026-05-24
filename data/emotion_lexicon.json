@@ -1,0 +1,247 @@
+{
+  "मस्त": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.8
+  },
+  "छान": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.7
+  },
+  "चांगला": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "चांगली": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "चांगले": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "अप्रतिम": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.9
+  },
+  "उत्तम": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.8
+  },
+  "आवडले": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.7
+  },
+  "आवडला": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.7
+  },
+  "आवडली": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.7
+  },
+  "अमूल्य": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.9
+  },
+  "आरामदायी": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "सुंदर": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.7
+  },
+  "मजबूत": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "हसून": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.8
+  },
+  "वाईट": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.7
+  },
+  "निराशा": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.8
+  },
+  "वाया": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.7
+  },
+  "सुमार": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.6
+  },
+  "दुखले": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.6
+  },
+  "भंगार": {
+    "emotion": "anger",
+    "polarity": "negative",
+    "intensity": 0.9
+  },
+  "घाण": {
+    "emotion": "anger",
+    "polarity": "negative",
+    "intensity": 0.8
+  },
+  "खराब": {
+    "emotion": "anger",
+    "polarity": "negative",
+    "intensity": 0.7
+  },
+  "फसवणूक": {
+    "emotion": "anger",
+    "polarity": "negative",
+    "intensity": 0.9
+  },
+  "नाजूक": {
+    "emotion": "disgust",
+    "polarity": "negative",
+    "intensity": 0.4
+  },
+  "पातळ": {
+    "emotion": "disgust",
+    "polarity": "negative",
+    "intensity": 0.5
+  },
+  "फाटली": {
+    "emotion": "disgust",
+    "polarity": "negative",
+    "intensity": 0.6
+  },
+  "विश्वास": {
+    "emotion": "trust",
+    "polarity": "positive",
+    "intensity": 0.7
+  },
+  "धन्यवाद": {
+    "emotion": "trust",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "टिकाऊ": {
+    "emotion": "trust",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "विश्वसनीय": {
+    "emotion": "trust",
+    "polarity": "positive",
+    "intensity": 0.8
+  },
+  "अनपेक्षित": {
+    "emotion": "surprise",
+    "polarity": "neutral",
+    "intensity": 0.5
+  },
+  "आश्चर्य": {
+    "emotion": "surprise",
+    "polarity": "neutral",
+    "intensity": 0.6
+  },
+  "भीती": {
+    "emotion": "fear",
+    "polarity": "negative",
+    "intensity": 0.6
+  },
+  "चिंता": {
+    "emotion": "fear",
+    "polarity": "negative",
+    "intensity": 0.5
+  },
+  "धोका": {
+    "emotion": "fear",
+    "polarity": "negative",
+    "intensity": 0.7
+  },
+  "आशा": {
+    "emotion": "anticipation",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "अपेक्षा": {
+    "emotion": "anticipation",
+    "polarity": "neutral",
+    "intensity": 0.5
+  },
+  "good": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.6
+  },
+  "bad": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.7
+  },
+  "best": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.9
+  },
+  "worst": {
+    "emotion": "anger",
+    "polarity": "negative",
+    "intensity": 0.9
+  },
+  "love": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.9
+  },
+  "hate": {
+    "emotion": "anger",
+    "polarity": "negative",
+    "intensity": 0.9
+  },
+  "awesome": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.9
+  },
+  "poor": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.7
+  },
+  "cheap": {
+    "emotion": "disgust",
+    "polarity": "negative",
+    "intensity": 0.5
+  },
+  "fast": {
+    "emotion": "joy",
+    "polarity": "positive",
+    "intensity": 0.5
+  },
+  "slow": {
+    "emotion": "sadness",
+    "polarity": "negative",
+    "intensity": 0.6
+  }
+}

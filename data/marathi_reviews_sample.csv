@@ -1,0 +1,61 @@
+review_id,product_category,product_name,review_text,rating,source
+R001,mobile,Samsung Galaxy M14,हा फोन खूप मस्त आहे. बॅटरी लाइफ छान आहे आणि कॅमेरा पण चांगला आहे.,5,amazon
+R002,mobile,Redmi Note 12,किंमतीच्या तुलनेत हा फोन ठीक आहे पण कॅमेरा अपेक्षेइतका चांगला नाही.,3,flipkart
+R003,mobile,iPhone 13,खूप महाग आहे पण performance अप्रतिम आहे. पैसे वसूल झाले.,5,amazon
+R004,mobile,Realme Narzo 60,फोन गरम होतो आणि बॅटरी लवकर संपते. वाईट अनुभव.,2,flipkart
+R005,mobile,Vivo Y27,डिस्प्ले छान आहे पण processor slow आहे.,3,amazon
+R006,mobile,OnePlus Nord CE 3,मस्त फोन आहे! चार्जिंग खूप fast आहे.,5,amazon
+R007,mobile,Poco X5 Pro,पैसे वाया गेले. फोन hang होतो वारंवार.,1,flipkart
+R008,mobile,Samsung Galaxy A34,चांगला फोन आहे. कॅमेरा क्वालिटी मस्त आहे.,4,amazon
+R009,mobile,Motorola Edge 40,delivery वेळेत झाली. फोन छान आहे.,4,flipkart
+R010,mobile,Nothing Phone 2,डिझाईन खूप वेगळी आहे. आवडली.,5,amazon
+R011,kitchen,Prestige Pressure Cooker,खूप उपयुक्त वस्तू आहे. quality पण छान आहे.,5,amazon
+R012,kitchen,Pigeon Mixer Grinder,मोटर खूप आवाज करते. वाईट उत्पादन.,2,flipkart
+R013,kitchen,Philips Air Fryer,आरोग्यदायी जेवण बनवण्यासाठी उत्तम. खूप आवडले.,5,amazon
+R014,kitchen,Hawkins Tawa,नॉन स्टिक coating लवकर निघाली. निराशा झाली.,2,flipkart
+R015,kitchen,Bajaj Induction Cooktop,किंमत वाजवी आणि performance छान.,4,amazon
+R016,kitchen,Milton Water Bottle,पाणी thanda राहते. मस्त product.,5,amazon
+R017,kitchen,Borosil Glass Set,नाजूक आहे पण दिसायला छान आहे.,4,flipkart
+R018,kitchen,Wonderchef Cookware,non-stick चांगले आहे. किंमत थोडी जास्त.,4,amazon
+R019,kitchen,Butterfly Wet Grinder,खूप जड आहे पण काम छान करते.,4,flipkart
+R020,kitchen,Cello Lunch Box,leak होतो. पैसे वाया.,1,amazon
+R021,fashion,Levi's Jeans,fitting perfect आहे. quality उत्तम.,5,amazon
+R022,fashion,Allen Solly Shirt,कापड चांगले पण रंग वेगळा आला.,3,flipkart
+R023,fashion,Bata Sandals,आरामदायी आहेत. रोज वापरतो.,5,amazon
+R024,fashion,Peter England Trouser,फिटिंग नीट नाही. परत करावे लागले.,2,flipkart
+R025,fashion,W for Woman Kurti,डिझाईन सुंदर आहे. आवडली खूप.,5,amazon
+R026,fashion,Lee Cooper Shoes,दर्जा सुमार आहे. महिन्यातच खराब झाले.,1,flipkart
+R027,fashion,Raymond Suit Length,कापड अप्रतिम. लग्नासाठी घेतले.,5,amazon
+R028,fashion,Fastrack Watch,दिसायला छान पण strap नाजूक.,3,flipkart
+R029,fashion,Wildcraft Backpack,मजबूत आहे. ट्रेकिंगसाठी मस्त.,5,amazon
+R030,fashion,Puma T-Shirt,कापड पातळ आहे. किंमतीला अनुसरून नाही.,2,flipkart
+R031,books,Shyamchi Aai,मराठी साहित्यातील अमूल्य पुस्तक. सर्वांनी वाचावे.,5,amazon
+R032,books,Mrityunjay,शिवाजी सावंत यांचे अप्रतिम लेखन. खूप आवडले.,5,flipkart
+R033,books,Ranangan,छपाई दर्जा सुमार. पाने फाटली.,2,amazon
+R034,books,Vyakti ani Valli,पु ल देशपांडे यांचे विनोदी लेखन. हसून हसून पोट दुखले.,5,flipkart
+R035,books,Battatyachi Chal,classic पुस्तक. प्रत्येकाने वाचावे.,5,amazon
+R036,books,Yayati,पुस्तक उशिरा मिळाले. content मात्र छान.,4,flipkart
+R037,books,Swami,ऐतिहासिक कादंबरी म्हणून उत्तम.,5,amazon
+R038,books,Kosla,भाषांतर नीट नाही. निराशा झाली.,2,flipkart
+R039,books,Pachola,कविता संग्रह छान आहे.,4,amazon
+R040,books,Duniyadari,पुस्तक चांगले पण किंमत जास्त वाटली.,3,flipkart
+R041,electronics,Boat Headphones,sound quality मस्त आहे. bass छान.,5,amazon
+R042,electronics,Mi Power Bank,चार्जिंग slow आहे पण किंमत कमी.,3,flipkart
+R043,electronics,Sony WH-1000XM4,noise cancellation अप्रतिम. खूप आवडले.,5,amazon
+R044,electronics,JBL Speaker,आवाज स्पष्ट आहे. battery पण छान.,5,flipkart
+R045,electronics,HP Laptop,किंमत वाजवी पण heating problem आहे.,3,amazon
+R046,electronics,Logitech Mouse,काम करताना आरामदायी. मस्त product.,5,flipkart
+R047,electronics,Canon Camera,फोटो quality अप्रतिम. व्यावसायिक वापरासाठी छान.,5,amazon
+R048,electronics,Dell Monitor,स्क्रीन छान आहे पण stand कमकुवत.,3,flipkart
+R049,electronics,Apple AirPods,sound खूप छान. comfort पण मस्त.,5,amazon
+R050,electronics,TP-Link Router,signal कमी येतो. वाईट अनुभव.,2,flipkart
+R051,mobile,Samsung Galaxy S23,flagship फोन आहे. कॅमेरा अप्रतिम.,5,amazon
+R052,mobile,Redmi 12,बजेट मध्ये उत्तम. मस्त फोन.,4,flipkart
+R053,kitchen,Prestige Gas Stove,मजबूत बांधणी आणि flame छान.,5,amazon
+R054,kitchen,Lifelong Hand Blender,खूप उपयुक्त. किंमत पण कमी.,5,flipkart
+R055,fashion,Adidas Shoes,आरामदायी आणि टिकाऊ.,5,amazon
+R056,fashion,H&M Dress,कापड पातळ आणि stitching वाईट.,2,flipkart
+R057,books,Aaicha Gao,बालपणीच्या आठवणी जागवल्या. खूप भावनिक.,5,amazon
+R058,books,Garambicha Bapu,अप्रतिम कादंबरी. वाचत राहावी अशी.,5,flipkart
+R059,electronics,boAt Smartwatch,features छान आहेत पण battery कमी.,3,amazon
+R060,electronics,Realme Buds,sound average पण किंमत मस्त.,4,flipkart
